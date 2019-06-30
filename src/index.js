@@ -1,4 +1,5 @@
 import Test from './components/Test.vue';
+import StringExt from './util/StringExt';
 
 const components = [
     Test
@@ -15,4 +16,7 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default components;
+export default [
+    StringExt,
+    Test
+];

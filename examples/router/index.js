@@ -1,14 +1,13 @@
 import VueRouter from 'vue-router';
+import Vue from 'vue';
+
+Vue.use(VueRouter);
 
 export default new VueRouter({
     routes: [
         {
-            path: "/app",
-            component: () => import('../views/App.vue')
-        },
-        {
-            path: "/",
-            component: () => import('../views/App.vue')
+            path: "/home",
+            component: () => import('../views/Home.vue')
         }
     ]
 });
