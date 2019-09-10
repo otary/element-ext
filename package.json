@@ -4,7 +4,7 @@
   "main": "./dist/element-ext.common.js",
   "scss": "./src/assets/scss/index.scss",
   "publishConfig": {
-    "registry": "http://localhost:8081/repository/npm-hosted/"
+    "registry": "http://192.168.17.223:8085/repository/npm-internal/"
   },
   "files": [
     "dist/*",

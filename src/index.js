@@ -1,8 +1,8 @@
-import Test from './components/Test.vue';
+import Link from './components/Link.vue';
 import StringExt from './util/StringExt';
 
 const components = [
-    Test
+    Link
 ];
 
 const install = function (Vue, opts = {}) {
@@ -16,7 +16,7 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default [
+export default {
     StringExt,
-    Test
-];
+    Link
+};
