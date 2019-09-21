@@ -21,7 +21,7 @@ service.interceptors.request.use(config => {
 });
 
 // 响应拦截
-axios.interceptors.response.use(
+service.interceptors.response.use(
     response => {
         return Promise.resolve(response.data);
     },
@@ -30,5 +30,5 @@ axios.interceptors.response.use(
     }
 );
 
-export default serivce;
+export default service;
 
