@@ -1,29 +1,35 @@
 <template>
     <section>
         <czw-link>ssdfsdfsd</czw-link>
-        <draggable>
 
-            sdjfksdfjsaldfslf
-        </draggable>
+        <div class="test">
+            sss
+        </div>
+
     </section>
 </template>
 
 <script>
 
-    import draggable from 'vuedraggable'
-    import Sortable from 'sortablejs'
-
-
     export default {
         name: "Home",
         components: {
-            "czw-link": () => import("../../src/components/Link"),
-            draggable,
-            Sortable
+            "czw-link": () => import("../../src/components/Link")
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss">
+    html{
+        font-size: 100px;
+    }
+</style>
 
+<style scoped lang="scss">
+    @import "../../src/assets/scss/base/util";
+
+    .test{
+        border: 1px solid #ccc;
+        width: px2rem(300);
+    }
 </style>

@@ -1,7 +1,7 @@
 export default {
 
     /**
-     * 转下划线格式
+     * 驼峰/Pascal转下划线格式
      * @param name
      * @param separator
      * @param firstLetterCapitalized
