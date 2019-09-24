@@ -2,19 +2,30 @@
 
 .#{$class-prefix} {
 
-  &-center {
 
-  }
-
-
+  /**
+   * 水平居中块
+   */
   &-center-block {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
+  &-center-block2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
+
+  /**
+   * 水平垂直居中
+   */
   &-center-middle {
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
