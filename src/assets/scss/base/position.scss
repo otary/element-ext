@@ -1,0 +1,20 @@
+@import "variables";
+
+.#{$class-prefix} {
+
+  &-center {
+
+  }
+
+
+  &-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  &-center-middle {
+
+  }
+}

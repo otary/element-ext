@@ -1,25 +1,2 @@
-/**
- * 单行省略号
- */
-@mixin text-single-ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 
-/**
- * 多行省略号
- */
-@mixin text-multiple-ellipsis($row-line) {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $row-line; // 指定显示的行数
-}
-
-/**
- * 将px转换成rem(默认font-size:100px)
- */
-@function px2rem($px, $base-font-size: 100) {
-  @return ($px / $base-font-size) + rem;
-}
+.center
