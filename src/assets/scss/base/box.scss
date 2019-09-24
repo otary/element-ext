@@ -52,14 +52,7 @@
     *zoom: 1;
   }
 
-  /**
-   * 固定定位,兼容IE6
-   */
-  &-fixed {
-    position: fixed;
-    _position: absolute;
-    *zoom: 1;
-  }
+
 
 
   &-border {
