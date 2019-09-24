@@ -1,10 +1,28 @@
 <template>
     <section>
-        <czw-link>ssdfsdfsd</czw-link>
 
-        <div class="test">
-            sss
-        </div>
+
+        <!-- 滚动条示例 -->
+        <fieldset>
+            <legend>滚动条美化</legend>
+            <div style="height: 100px; overflow: auto;" class="czw-border czw-scrollbar-beautify">
+                <div style="height: 2000px;">
+                    内容
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>隐藏滚动条</legend>
+            <div style="height: 100px; overflow: auto;" class="czw-border czw-scrollbar-hide">
+                <div style="height: 2000px;">
+                    内容
+                </div>
+            </div>
+        </fieldset>
+
+
+        <czw-link>ssdfsdfsd</czw-link>
 
     </section>
 </template>
@@ -19,17 +37,6 @@
     }
 </script>
 
-<style lang="scss">
-    html{
-        font-size: 100px;
-    }
-</style>
-
 <style scoped lang="scss">
-    @import "../../src/assets/scss/base/util";
-
-    .test{
-        border: 1px solid #ccc;
-        width: px2rem(300);
-    }
+    @import "~@scss/index";
 </style>

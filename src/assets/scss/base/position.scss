@@ -2,7 +2,6 @@
 
 .#{$class-prefix} {
 
-
   /**
    * 水平居中块
    */
@@ -18,6 +17,15 @@
     transform: translateX(-50%);
   }
 
+  /**
+   * 垂直居中块
+   */
+  &-middle-block {
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+  }
+
 
   /**
    * 水平垂直居中
@@ -28,4 +36,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 }

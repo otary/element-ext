@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+
+.#{$class-prefix} {
+
+  /**
+   * 单行省略号
+   */
+  &-text-ellipsis {
+    @include text-single-ellipsis;
+  }
+
+  /**
+   * 多行省略号
+   */
+  @for $i from 1 to 10 {
+    &-text-cllipsis-#{$i} {
+      @include text-multiple-ellipsis($i);
+    }
+  }
+
+
+}

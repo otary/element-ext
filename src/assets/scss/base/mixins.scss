@@ -26,3 +26,16 @@
 @function px2rem($px, $base-font-size: 100) {
   @return ($px / $base-font-size) + rem;
 }
+
+
+/**
+ * 最小尺寸, 兼容IE6
+ */
+@mixin min-width($min-width) {
+  min-width: $min-width;
+  _width: $min-width;
+}
+@mixin min-height($min-height) {
+  min-height: $min-height;
+  _height: $min-height;
+}

@@ -1,0 +1,71 @@
+@import "variables";
+
+.#{$class-prefix} {
+
+  /**
+   * 隐藏滚动条
+   * for IE10,IE11,IE12
+   */
+  &-scrollbar-hide {
+    -ms-scroll-chaining: chained;
+    -ms-overflow-style: none;
+    -ms-content-zooming: zoom;
+    -ms-scroll-rails: none;
+    -ms-content-zoom-limit-min: 100%;
+    -ms-content-zoom-limit-max: 500%;
+    -ms-scroll-snap-type: proximity;
+    -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+    -ms-overflow-style: none;
+    /*火狐下隐藏滚动条*/
+    overflow: -moz-scrollbars-none;
+    overflow: auto;
+  }
+
+  /**
+   * 隐藏滚动条
+   * for chrome
+   */
+  &-scrollbar-hide::-webkit-scrollbar {
+    background: transparent;
+  }
+
+  /**
+   * 滚动条美化
+   */
+  &-scrollbar-beautify::-webkit-scrollbar {
+    width: 6px;
+    background-color: #eee;
+  }
+
+  &-scrollbar-beautify::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #C9C9C9;
+  }
+
+  /**
+   * 内联块级元素,兼容IE6
+   */
+  &-inline-block {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+
+  /**
+   * 固定定位,兼容IE6
+   */
+  &-fixed {
+    position: fixed;
+    _position: absolute;
+    *zoom: 1;
+  }
+
+
+  &-border {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+
+}
