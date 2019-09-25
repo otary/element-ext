@@ -77,7 +77,7 @@
                 this.animateSpeed = this.scrollDelay;
             }
 
-            if(this.direction == 'up'){
+            if (this.direction == 'up') {
                 $marqueeBox.css('top', '0');
 
                 window.setInterval(() => {
@@ -87,7 +87,7 @@
                         $marqueeBox.stop().animate({top: '0'}, this.animateSpeed);
                     }
                 }, this.scrollDelay);
-            } else if(this.direction == 'down'){
+            } else if (this.direction == 'down') {
                 $marqueeBox.css('bottom', '0');
 
                 window.setInterval(() => {
@@ -97,8 +97,9 @@
                         $marqueeBox.stop().animate({bottom: '0'}, this.animateSpeed);
                     }
                 }, this.scrollDelay);
-            }
+            } else if (this.direction == 'left') {
 
+            }
 
 
         }
@@ -122,7 +123,7 @@
         overflow: -moz-scrollbars-none;
 
         &::-webkit-scrollbar {
-            background: transparent;
+           background: transparent;
         }
 
         &__box {

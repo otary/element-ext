@@ -33,8 +33,7 @@
         <czw-link>ssdfsdfsd</czw-link>
 
 
-        <div style="width: 100px; height: 150px">
-        <czw-marquee :scroll-delay="300">
+        <czw-marquee width="200px" height="150px">
             <div>aaaaaaaa</div>
             <div>bbbbbb</div>
             <div>ccccc</div>
@@ -50,7 +49,7 @@
             <div>ggggggg</div>
             <div>ccccc</div>
         </czw-marquee>
-        </div>
+
         <czw-marquee width="200px" height="150px" direction="down" style="border: 1px solid rebeccapurple;">
             <div>aaaaaaaa</div>
             <div>bbbbbb</div>
@@ -68,30 +67,58 @@
             <div>ccccc</div>
         </czw-marquee>
 
+
+        <czw-marquee width="150px" height="150px" direction="left" style="border: 1px solid red;">
+            <div style="width:600px;height: 150px;">
+
+                <div class="test">aaaaaaaa</div>
+                <div class="test">bbbbbb</div>
+                <div class="test">ccccc</div>
+                <div class="test">ccccc</div>
+                <div class="test">ccccc</div>
+                <div class="test">ccccc</div>
+                <div class="test">ccccc</div>
+                <div class="test">dddddd</div>
+                <div class="test">eeee</div>
+                <div class="test">ccccc</div>
+                <div class="test">fffff</div>
+                <div class="test">ccccc</div>
+                <div class="test">ggggggg</div>
+                <div class="test">ccccc</div>
+            </div>
+        </czw-marquee>
+
     </section>
 </template>
 
 <script>
 
-   // import UrlExt from "@/util/UrlExt";
+    // import UrlExt from "@/util/UrlExt";
 
 
     export default {
         name: "Home",
-        data(){
+        data() {
             return {
                 lists: [
-                    "连雨不知春去","一晴方觉夏"
+                    "连雨不知春去", "一晴方觉夏"
                 ]
             }
         },
         components: {
             "czw-link": () => import("../../src/components/Link"),
-            "czw-marquee":()=> import("../../src/components/Marquee")
+            "czw-marquee": () => import("../../src/components/Marquee")
         }
     }
 </script>
 
 <style scoped lang="scss">
     @import "~@scss/index";
+
+    .test{
+        float:left;
+        width: 100px;
+
+        border: 1px solid #ccc;
+    }
 </style>
