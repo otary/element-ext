@@ -8,6 +8,9 @@ export default new VueRouter({
         {
             path: "/home",
             component: () => import('../views/Home.vue')
+        }, {
+            path: "/marquee-example",
+            component: () => import('../views/MarqueeExamples.vue')
         }
     ]
 });

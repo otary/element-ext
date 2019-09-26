@@ -98,7 +98,7 @@
                     }
                 }, this.scrollDelay);
             } else if (this.direction == 'left') {
-
+                // @TODO
             }
 
 
