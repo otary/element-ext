@@ -14,7 +14,7 @@
    * 多行省略号
    */
   @for $i from 1 to 10 {
-    &-text-cllipsis-#{$i} {
+    &-text-ecllipsis-#{$i} {
       @include text-multiple-ellipsis($i);
     }
   }

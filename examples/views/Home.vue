@@ -23,16 +23,29 @@
         <fieldset>
             <legend>遮罩</legend>
             <div style="height: 100px;">
-                <!--<div class="czw-mask-fixed"></div>-->
+                <div class="czw-mask-absoulte"></div>
             </div>
         </fieldset>
 
-        <div class="extend-click">sss</div>
 
         <czw-link>ssdfsdfsd</czw-link>
 
 
+        <div class="box-shadow">
+            test
+        </div>
 
+        <div class="box-hover">
+
+            aaaaa
+        </div>
+
+        <div class="box-hover2">
+
+            bbb
+        </div>
+
+        <div class="test2"></div>
 
     </section>
 </template>
@@ -45,8 +58,7 @@
     export default {
         name: "Home",
         data() {
-            return {
-            }
+            return {}
         },
         components: {
             "czw-link": () => import("../../src/components/Link")
@@ -57,10 +69,43 @@
 <style scoped lang="scss">
     @import "~@scss/index";
 
-    .test{
-        float:left;
-        width: 100px;
-
-        border: 1px solid #ccc;
+    .test2{
+        @include triangle(left, 8px);
     }
+
+
+    .box-shadow {
+        box-shadow: 0px 14px 26px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    // 盒子 Hover
+    .box-hover {
+        // box-shadow: 0px 1px 2px 0px rgba(84, 107, 107, .4);
+        transition: all .2s linear;
+
+        &:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+            transform: translate3d(0, -2px, 0);
+        }
+    }
+
+    .box-hover2 {
+        transition: transform .5s ease;
+
+        &:hover {
+            transform: translateX(10px);
+        }
+    }
+
+
+    .triangle{
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+        border-top: 4px solid #000;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+    }
+
 </style>

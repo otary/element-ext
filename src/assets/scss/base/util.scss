@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+.#{$class-prefix} {
+
+  /**
+   * 滤镜: 将彩色照片显示为黑白照片
+   */
+  &-grayscale {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+  }
+
+  /**
+   * 三角箭头
+   * eg. czw-triangle
+   */
+  @each $direction in $position-lists {
+    &-triangle-#{$direction} {
+      @include triangle($direction);
+    }
+
+    @for $i from 2 to 5 {
+      &-trangle-#{$direction}-#{$i*2} {
+        @include triangle($direction, $i*2 + 'px');
+      }
+    }
+
+  }
+
+
+}
