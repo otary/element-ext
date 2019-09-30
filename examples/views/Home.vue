@@ -52,16 +52,13 @@
 
 <script>
 
-    // import UrlExt from "@/util/UrlExt";
-
-
     export default {
         name: "Home",
         data() {
             return {}
         },
         components: {
-            "czw-link": () => import("../../src/components/Link")
+            "czw-link": () => import("@/components/Link")
         }
     }
 </script>
@@ -95,17 +92,6 @@
         &:hover {
             transform: translateX(10px);
         }
-    }
-
-
-    .triangle{
-        display: inline-block;
-        width: 0;
-        height: 0;
-        vertical-align: middle;
-        border-top: 4px solid #000;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
     }
 
 </style>

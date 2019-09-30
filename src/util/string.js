@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 
     /**
      * 驼峰/Pascal转下划线格式

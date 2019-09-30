@@ -102,7 +102,7 @@
 
                 const vnodes = this.$slots.default || [];
                 const totalWidth = vnodes.reduce((totalWidth, vnode) => {
-                    return totalWidth + parseInt($(vnode.elm).outerWidth());
+                    return totalWidth + parseInt($(vnode.elm).outerWidth(true));
                 }, 0);
                 // 设置外层的总宽度
                 $marqueeBox.width(totalWidth);
@@ -119,7 +119,7 @@
 
                 const vnodes = this.$slots.default || [];
                 const totalWidth = vnodes.reduce((totalWidth, vnode) => {
-                    return totalWidth + parseInt($(vnode.elm).outerWidth());
+                    return totalWidth + parseInt($(vnode.elm).outerWidth(true));
                 }, 0);
                 // 设置外层的总宽度
                 $marqueeBox.width(totalWidth);
