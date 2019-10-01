@@ -66,7 +66,7 @@
 <style scoped lang="scss">
     @import "~@scss/index";
 
-    .test2{
+    .test2 {
         @include triangle(left, 8px);
     }
 

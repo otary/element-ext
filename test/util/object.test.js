@@ -13,7 +13,7 @@ test('object.clone', () => {
 
     // 浅复制
     let o2 = object.clone(o1);
-    expect(o1 === o2).toBeFalsy();
+    expect(o1 == o2).toBeFalsy();
     expect(o1).toEqual(o2);
 
     // 深复制
@@ -29,4 +29,8 @@ test('object.conformsTo', () => {
             return n == 1;
         }
     })).toBeTruthy();
+});
+
+test('object.isIPv4', ()=>{
+    expect(object.isIPv4('192.168.10.10')).toBeTruthy();
 });
