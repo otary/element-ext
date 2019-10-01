@@ -1,10 +1,5 @@
-const  _ext = require('../../src/index.js');
+const {url} = require('../../src/util/index.js');
 
-
-
-
-
-test('测试', ()=>{
-    console.log(_ext.string);
-    expect(_ext.string.toCamel("ssssSASks")).toBe('ssss_s_a_sks');
+test('url.getUriParam', () => {
+    expect(url.getUriParam('username', 'http://www.baidu.com?username=chenzw')).toBe('chenzw');
 });

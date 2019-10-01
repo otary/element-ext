@@ -3,12 +3,26 @@
 
 ## 工具类
 
-- **StringExt**
+### string
+
+- 驼峰/Pascal转下划线格式
 
 ```
+import {string} from 'element-ext';
 
+string.toCamel('UserName');  // => user_name
+string.toCamel("UserName", '#'); // => user#name;
 ```
 
+### url
+
+- 获取url参数
+
+```
+import {url} from 'element-ext';
+
+url.getUriParam('username', 'http://www.baidu.com?username=chenzw');  // => chenzw
+```
 
 
 ## Project setup
