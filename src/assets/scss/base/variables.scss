@@ -1,7 +1,124 @@
 $class-prefix: "czw";
 
-$base-color: red;
-$base-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 
+/**
+ * 基础字符集
+*/
+$font-family-sans: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", "Source Code Pro", monospace, "Microsoft YaHei" !default;
+$font-family-base: $font-family-sans !default;
+
+/**
+* 常用变量列表
+*/
 $position-lists: top, right, bottom, left;
 $position-pair-lists: (top, bottom), (left, right);
+
+/**
+ * 颜色
+ */
+$blue: #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+
+$state-success-text:             #3c763d !default;
+$state-success-bg:               #dff0d8 !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                #31708f !default;
+$state-info-bg:                  #d9edf7 !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             #8a6d3b !default;
+$state-warning-bg:               #fcf8e3 !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              #a94442 !default;
+$state-danger-bg:                #f2dede !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+/**
+ * 链接样式
+ */
+$link-color: $primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+/**
+ * 行高
+ */
+$line-height-xs: .8 !default;
+$line-height-sm: 1.2 !default;
+$line-height-md: 1.5 !default;
+$line-height-lg: 2 !default;
+
+/**
+ * 边框样式
+ */
+$border-color: $gray-300 !default;
+$border-radius: .25rem !default;
+$border-radius-lg: .3rem !default;
+$border-radius-sm: .2rem !default;
+
+/**
+ * 边框阴影
+ */
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow: 0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
+
+/**
+ * 动画
+ */
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+$transition-collapse: height .35s ease !default;
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
