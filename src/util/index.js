@@ -3,5 +3,6 @@ module.exports = {
     url: require('./url'),
     object: require('./object'),
     array: require('./array'),
-    dom: require('./dom')
+    dom: require('./dom'),
+    vueComponent: require('./vue-component')
 };
