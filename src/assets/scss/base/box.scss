@@ -31,17 +31,7 @@
    * 滚动条美化
    */
   &-scrollbar-beautify {
-
-    &::-webkit-scrollbar {
-      width: 6px;
-      background-color: #eee;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 5px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-      background-color: #C9C9C9;
-    }
+    @include scrollbar-beautify(6px, 6px);
   }
 
 
@@ -86,7 +76,7 @@
   }
 
 
-  &-border-colorful{
-     border-image: linear-gradient(30deg, #4285f4 16.66667%, #ea4335 0, #ea4335 33.33333%, #f9bc05 0, #f9bc05 50%, #4285f4 0, #4285f4 66.66667%, #34a852 0, #34a852 83.33333%, #ea4335 0, #ea4335)  2 2;
+  &-border-colorful {
+    border-image: linear-gradient(30deg, #4285f4 16.66667%, #ea4335 0, #ea4335 33.33333%, #f9bc05 0, #f9bc05 50%, #4285f4 0, #4285f4 66.66667%, #34a852 0, #34a852 83.33333%, #ea4335 0, #ea4335) 2 2;
   }
 }
