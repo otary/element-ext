@@ -32,6 +32,21 @@ function loadScript(url) {
     document.body.appendChild(tag);
 }
 
+function delayInit(o, callback) {
+    if (typeof o == 'undefined') {
+        let timer = setInterval(function () {
+            if (typeof o == 'undefined') {
+                return false;
+            }
+            clearInterval(timer);
+            callback(o);
+        }, 50);
+    } else {
+        callback(o);
+    }
+}
+
+
 module.exports = {
     loadCss,
     loadScript

@@ -1,5 +1,6 @@
 @import "variables";
 @import "position";
+@import "mixins";
 
 .#{$class-prefix} {
 
@@ -30,7 +31,7 @@
   /**
    * 滚动条美化
    */
-  &-scrollbar-beautify {
+  &-scrollbar-beautify-6 {
     @include scrollbar-beautify(6px, 6px);
   }
 
