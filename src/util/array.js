@@ -9,4 +9,4 @@ function isArray(value) {
 
 module.exports = {
     isArray
-}
+};

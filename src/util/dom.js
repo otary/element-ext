@@ -70,4 +70,4 @@ module.exports = {
     loadScript,
     delayInit,
     supportCssProperty
-}
+};
