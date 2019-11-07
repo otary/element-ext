@@ -46,7 +46,7 @@ function getType(o) {
  * @returns {boolean}
  */
 function isObject(value) {
-    return getType(value) == "Object";
+    return getType(value) === "Object";
 }
 
 /**
@@ -55,7 +55,7 @@ function isObject(value) {
  * @returns {boolean}
  */
 function isString(value) {
-    return getType(value) == "String";
+    return getType(value) === "String";
 }
 
 /**
@@ -64,7 +64,7 @@ function isString(value) {
  * @returns {boolean}
  */
 function isNumber(value) {
-    return getType(value) == "Number";
+    return getType(value) === "Number";
 }
 
 /**
@@ -73,7 +73,7 @@ function isNumber(value) {
  * @returns {boolean}
  */
 function isArray(value) {
-    return getType(value) == "Array";
+    return getType(value) === "Array";
 }
 
 /**
@@ -82,7 +82,7 @@ function isArray(value) {
  * @returns {boolean}
  */
 function isFunction(value) {
-    return getType(value) == "Function";
+    return getType(value) === "Function";
 }
 
 /**
@@ -91,7 +91,7 @@ function isFunction(value) {
  * @returns {boolean}
  */
 function isDate(value) {
-    return getType(value) == "Date";
+    return getType(value) === "Date";
 }
 
 /**

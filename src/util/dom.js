@@ -5,7 +5,7 @@
 const loadCss = (url) => {
     let tag = document.createElement('link');
     for (let i = 0; i < document.links.length; i++) {
-        if (document.links[0].href == url) {
+        if (document.links[0].href === url) {
             return;
         }
     }
@@ -23,7 +23,7 @@ const loadCss = (url) => {
 const loadScript = (url) => {
     let tag = document.createElement('script');
     for (let i = 0; i < document.scripts.length; i++) {
-        if (document.scripts[0].src == url) {
+        if (document.scripts[0].src === url) {
             return;
         }
     }
