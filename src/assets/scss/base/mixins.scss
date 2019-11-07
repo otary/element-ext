@@ -57,7 +57,7 @@
 /**
  * 三角形
  */
-@mixin triangle($direction: bottom,$width: 5px, $color: #ccc) {
+@mixin triangle($direction: bottom, $width: 5px, $color: #ccc) {
   display: inline-block;
   width: 0;
   height: 0;
@@ -65,12 +65,12 @@
 
   @each $d1, $d2 in $position-pair-lists {
     @if ($d1 != $direction and $d2 != $direction) {
-      border-#{$d1}: $width solid transparent;
-      border-#{$d2}: $width solid transparent;
+      border-#{$d1}: unquote($width) solid transparent;
+      border-#{$d2}: unquote($width) solid transparent;
     } @else if ($d1 == $direction) {
-      border-#{$d2}: $width solid $color;
+      border-#{$d2}: unquote($width) solid $color;
     } @else if ($d2 == $direction) {
-      border-#{$d1}: $width solid $color;
+      border-#{$d1}: unquote($width) solid $color;
     }
   }
 }

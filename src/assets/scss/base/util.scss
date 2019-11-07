@@ -24,7 +24,7 @@
     }
 
     @for $i from 2 to 5 {
-      &-trangle-#{$direction}-#{$i*2} {
+      &-triangle-#{$direction}-#{$i*2} {
         @include triangle($direction, $i*2 + 'px');
       }
     }

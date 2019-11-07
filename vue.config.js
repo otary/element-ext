@@ -5,6 +5,12 @@ function resolve(dir) {
 }
 
 module.exports = {
+    baseUrl: './',
+    pages: {
+        index: {
+            entry: './examples/index.js'
+        }
+    },
     chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))

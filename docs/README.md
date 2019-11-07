@@ -1,8 +1,12 @@
 # element-ext
 
+`element-ui` 扩展
+
 ## 样式类
 
 统一以 `czw-` 开头
+
+### box
 
 > 美化滚动条
 
@@ -26,12 +30,147 @@
 
 > 遮罩
 
+- 区域遮罩
 ``` html
-<div class="czw-mask-absoulte">
+<div style="position: relative; height: 100px;">
+    <div class="czw-mask-absolute"></div>
 </div>
 ```
 
-> 
+- 全局遮罩
+
+``` html
+<div class="czw-mask-fixed"></div>
+
+```
+
+> 七彩颜色条
+
+``` html
+<div style="height: 5px;" class="czw-bg-colorful"></div>
+```
+
+> 七彩边框
+
+``` html
+<div style="border: 2px solid transparent;" class="czw-border-colorful">
+
+</div>
+```
+
+---
+
+### position
+
+> 水平居中
+
+``` html
+<div style="height: 50px;">
+   <div style="width: 200px;" class="czw-box-border czw-center-block">
+        block
+    </div>
+</div>
+
+<!-- block -->
+<div style="position: relative; height: 100px;">
+    <div class="czw-box-border czw-center">
+        block
+    </div>
+</div>
+
+<!-- inline -->
+<div style="position: relative; height: 100px;">
+    <span class="czw-box-border czw-center">
+        inline
+    </span>
+</div>
+```
+
+> 垂直居中
+
+``` html
+<!-- block -->
+<div style="position: relative; height: 100px;">
+    <div class="czw-box-border czw-middle">
+        block
+    </div>
+</div>
+
+<!-- inline -->
+<div style="position: relative; height: 100px;">
+     <span class="czw-box-border czw-middle">
+        inlne
+     </span>
+</div>
+```
+
+> 水平垂直居中
+
+``` html
+<!-- block -->
+<div style="position: relative; height: 50px;">
+   <div class="czw-box-border czw-center-middle">
+       block
+   </div>
+</div>
+
+<!-- inline -->
+<div style="position: relative; height: 50px;">
+   <span class="czw-box-border czw-center-middle">
+      inline
+   </span>
+</div>
+```
+
+---
+### text
+
+> 单行省略号
+
+``` html
+<div style="width: 500px;" class="czw-text-ellipsis">
+   2019年10月30日，国家烟草专卖局、国家市场监督管理总局发布《关于进一步保护未成年人免受电子烟侵害的通告》（附件一），敦促电商平台及时关闭电子烟店铺，并将电子烟产品及时下架。2019年11月6日，根据该通知要求，浙江省烟草专卖局《关于立即关闭电子烟店铺、下架电子烟产品的函》（附件二），要求阿里巴巴集团即日起关闭平台上电子烟店铺，并将电子烟产品及时下架。
+</div>
+```
+
+> 多行省略号
+
+``` html
+<div style="width: 500px;" class="czw-text-ecllipsis-2">
+     2019年10月30日，国家烟草专卖局、国家市场监督管理总局发布《关于进一步保护未成年人免受电子烟侵害的通告》（附件一），敦促电商平台及时关闭电子烟店铺，并将电子烟产品及时下架。2019年11月6日，根据该通知要求，浙江省烟草专卖局《关于立即关闭电子烟店铺、下架电子烟产品的函》
+     （附件二），要求阿里巴巴集团即日起关闭平台上电子烟店铺，并将电子烟产品及时下架。
+</div>
+```
+
+---
+### animation
+
+> 点扩散效果
+
+``` html
+<div style="width: 10px;height: 10px;background-color: #ccc;border-radius: 50%; animation: czw-pulsate-2 1s ease-out infinite;">
+</div>
+```
+
+
+---
+### util
+
+> 三角形
+
+``` html
+<div class="czw-triangle-left"></div>
+<div class="czw-triangle-top"></div>
+<div class="czw-triangle-bottom"></div>
+<div class="czw-triangle-right"></div>
+
+<div class="czw-triangle-right-4"></div>
+<div class="czw-triangle-right-6"></div>
+<div class="czw-triangle-right-8"></div>
+<div class="czw-triangle-right-10"></div>
+```
+
+
 
 ---
 
@@ -123,23 +262,29 @@ dom.loadScript('./jquery.js');
 
 ---
 
-## Project setup
+## 安装
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 运行
 ```
 npm run serve
 ```
 
-### Run your tests
+### 编译
+
 ```
-npm run test
+npm run build
+
+// 编译js文件
+npm run build:bundle
+// 编译css文件
+npm run build:scss
 ```
 
-### Lints and fixes files
+### 测试
 ```
-npm run lint
+npm run test
 ```
 
