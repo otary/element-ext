@@ -11,6 +11,15 @@ export default new VueRouter({
         }, {
             path: "/marquee-example",
             component: () => import('../views/MarqueeExamples.vue')
+        }, {
+            path: "/css/box",
+            component: () => import('../views/css/BoxExamples.vue')
+        }, {
+            path: "/css/position",
+            component: () => import('../views/css/PositionExamples.vue')
+        }, {
+            path: "/css/text",
+            component: () => import('../views/css/TextExamples.vue')
         }
     ]
 });

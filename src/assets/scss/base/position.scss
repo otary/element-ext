@@ -11,7 +11,7 @@
     margin-right: auto;
   }
 
-  &-center-block2 {
+  &-center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -20,7 +20,7 @@
   /**
    * 垂直居中块
    */
-  &-middle-block {
+  &-middle {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -30,7 +30,7 @@
   /**
    * 水平垂直居中
    */
-  &-center-middle-block {
+  &-center-middle {
     position: absolute;
     top: 50%;
     left: 50%;
