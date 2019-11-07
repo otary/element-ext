@@ -11,9 +11,9 @@ module.exports = {
             entry: './examples/index.js'
         }
     },
-    chainWebpack: config => {
+    chainWebpack: (config) => {
         config.resolve.alias
             .set('@', resolve('src'))
             .set('@scss', resolve('src/assets/scss'));
     }
-}
+};

@@ -21,4 +21,4 @@ function toCamel(name, separator = '_', firstLetterCapitalized = false) {
 
 module.exports = {
     toCamel
-}
+};

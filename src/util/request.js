@@ -10,7 +10,7 @@ const service = axios.create({
 });
 
 // 请求拦截
-service.interceptors.request.use(config => {
+service.interceptors.request.use((config) => {
 
     return {
         // 增加时间戳参数
