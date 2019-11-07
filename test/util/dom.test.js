@@ -17,3 +17,8 @@ test('dom.delayInit', () => {
     })).toBe('finish');
 
 });
+
+
+test('dom.supportCssProperty', () => {
+    expect(dom.supportCssProperty("textShadow")).toBeTruthy();
+});

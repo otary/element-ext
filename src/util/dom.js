@@ -52,8 +52,22 @@ const delayInit = (matchFn, callbackFn) => {
 };
 
 
+/**
+ * 是否支持某个CSS属性
+ * @param cssPropertyName
+ * @returns {boolean}
+ */
+const supportCssProperty = (cssPropertyName) => {
+    if (cssPropertyName in document.documentElement.style) {
+        return true;
+    }
+    return false;
+};
+
+
 module.exports = {
     loadCss,
     loadScript,
-    delayInit
+    delayInit,
+    supportCssProperty
 }

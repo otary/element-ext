@@ -200,7 +200,7 @@
 
 - 驼峰/Pascal转下划线格式
 
-```
+``` javascript
 import {string} from 'element-ext';
 
 string.toCamel('UserName');  // => user_name
@@ -211,7 +211,7 @@ string.toCamel("UserName", '#'); // => user#name;
 
 - 判断是否数组
 
-```
+``` javascript
 import {array} from 'element-ext';
 
 array.isArray([1,2]); // => true
@@ -221,7 +221,7 @@ array.isArray([1,2]); // => true
 
 - 克隆
 
-```
+``` javascript
 import {object} from 'element-ext';
 
 let o1 = {
@@ -243,7 +243,7 @@ o1 === o3 // => false
 
 - 判断对象的属性是否满足某个条件
 
-```
+``` javascript
 import {object} from 'element-ext';
 
 object.conformsTo({a: 1, b: 2}, {
@@ -258,7 +258,7 @@ object.conformsTo({a: 1, b: 2}, {
 
 - 获取url参数
 
-```
+``` javascript
 import {url} from 'element-ext';
 
 url.getUriParam('username', 'http://www.baidu.com?username=chenzw');  // => chenzw
@@ -268,19 +268,42 @@ url.getUriParam('username', 'http://www.baidu.com?username=chenzw');  // => chen
 
 - 动态加载css资源
 
-```
+``` javascript
 import {dom} from 'element-ext';
 dom.loadCss('./theme.css');
 ```
 
 - 动态加载js资源
 
-```
+``` javascript
 import {dom} from 'element-ext';
 dom.loadScript('./jquery.js');
 ```
 
 ---
+
+- 延迟加载
+
+``` javascript
+let loadFinished = false;
+window.setTimeout(() => {
+    loadFinished = true;
+}, 2000);
+
+
+dom.delayInit(() => {
+   return loadFinished;
+}, () => {
+   return 'finish';
+});  // => finish
+
+```
+
+- 是否支持某个CSS属性
+
+``` javascript
+
+```
 
 ## 安装
 ```

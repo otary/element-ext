@@ -299,6 +299,12 @@ dom.delayInit(() => {
 
 ```
 
+- 是否支持某个CSS属性
+
+``` javascript
+
+```
+
 ## 安装
 ```
 npm install
