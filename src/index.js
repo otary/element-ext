@@ -15,4 +15,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-module.exports = require('../util/index.js');
+module.exports = require('./util/index.js');

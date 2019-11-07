@@ -2,6 +2,10 @@
 
 `element-ui` 扩展
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c2bd9fe0366a4ee5a3a44b04a1eeff1b)](https://www.codacy.com/manual/otary/easy-security?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=otary/easy-security&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/otary/element-ext.svg?branch=master)](https://travis-ci.org/otary/element-ext)
+
+
 ## 样式类
 
 统一以 `czw-` 开头

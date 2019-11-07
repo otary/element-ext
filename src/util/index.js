@@ -1,5 +1,5 @@
 module.exports = {
-    string: require('./string.js'),
+    string: require('./string'),
     url: require('./url'),
     object: require('./object'),
     array: require('./array'),
