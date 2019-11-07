@@ -1,7 +1,7 @@
 const path = require('path');
 
 function resolve(dir) {
-    return path.join(__dirname, dir)
+    return path.join(__dirname, dir);
 }
 
 module.exports = {
@@ -14,6 +14,6 @@ module.exports = {
     chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))
-            .set('@scss', resolve('src/assets/scss'))
+            .set('@scss', resolve('src/assets/scss'));
     }
 }

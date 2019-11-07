@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 module.exports = {
 
     /**
@@ -6,7 +8,7 @@ module.exports = {
      * @param useSubdirectories
      * @param regExp
      */
-    loadByPath: function ({path, useSubdirectories = true, regExp = /\.vue/,}) {
+    loadByPath: function ({path, useSubdirectories = true, regExp = /\.vue/}) {
         const requireComponents = require.context(path, useSubdirectories, regExp);
 
         requireComponents.keys().forEach((fileName) => {
@@ -19,4 +21,4 @@ module.exports = {
         });
 
     }
-}
+};

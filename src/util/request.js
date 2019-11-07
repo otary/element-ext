@@ -22,10 +22,10 @@ service.interceptors.request.use(config => {
 
 // 响应拦截
 service.interceptors.response.use(
-    response => {
+    (response) => {
         return Promise.resolve(response.data);
     },
-    error => {
+    (error) => {
         return Promise.reject(error.response.data);
     }
 );
