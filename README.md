@@ -5,12 +5,21 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c2bd9fe0366a4ee5a3a44b04a1eeff1b)](https://www.codacy.com/manual/otary/easy-security?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=otary/easy-security&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/otary/element-ext.svg?branch=master)](https://travis-ci.org/otary/element-ext)
 
+## 文档
+
+[中文文档](https://otary.github.io/element-ext/)
+
+## demo
+
+[demo](https://otary.github.io/element-ext/demo/)
 
 ## 样式类
 
 统一以 `czw-` 开头
 
 ### box
+
+[demo](https://otary.github.io/element-ext/demo/#/css/box)
 
 > 美化滚动条
 
@@ -35,6 +44,7 @@
 > 遮罩
 
 - 区域遮罩
+
 ``` html
 <div style="position: relative; height: 100px;">
     <div class="czw-mask-absolute"></div>
@@ -65,6 +75,8 @@
 ---
 
 ### position
+
+[demo](https://otary.github.io/element-ext/demo/#/css/position)
 
 > 水平居中
 
@@ -129,6 +141,8 @@
 ---
 ### text
 
+[demo](https://otary.github.io/element-ext/demo/#/css/text)
+
 > 单行省略号
 
 ``` html
@@ -149,6 +163,8 @@
 ---
 ### animation
 
+[demo](https://otary.github.io/element-ext/demo/#/css/animation)
+
 > 点扩散效果
 
 ``` html
@@ -159,6 +175,8 @@
 
 ---
 ### util
+
+[demo](https://otary.github.io/element-ext/demo/#/css/util)
 
 > 三角形
 
@@ -173,8 +191,6 @@
 <div class="czw-triangle-right-8"></div>
 <div class="czw-triangle-right-10"></div>
 ```
-
-
 
 ---
 
