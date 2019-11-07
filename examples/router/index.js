@@ -8,11 +8,8 @@ export default new VueRouter({
         path: "/",
         component: () => import('../views/Home.vue')
     }, {
-        path: "/home",
-        component: () => import('../views/Home.vue')
-    }, {
-        path: "/marquee-example",
-        component: () => import('../views/MarqueeExamples.vue')
+        path: "/components/marquee-example",
+        component: () => import('../views/components/MarqueeExamples.vue')
     }, {
         path: "/css/box",
         component: () => import('../views/css/BoxExamples.vue')
@@ -25,9 +22,9 @@ export default new VueRouter({
     }, {
         path: "/css/animation",
         component: () => import('../views/css/Animation.vue')
-    },{
+    }, {
         path: "/css/util",
-        component: ()=> import('../views/css/Util.vue')
+        component: () => import('../views/css/Util.vue')
     }
     ]
 });

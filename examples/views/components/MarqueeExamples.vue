@@ -85,7 +85,7 @@
     export default {
         name: "MarqueeExamples",
         components: {
-            "czw-marquee": () => import("../../src/components/Marquee")
+            "czw-marquee": () => import("../../../src/components/Marquee")
         }
     }
 </script>
