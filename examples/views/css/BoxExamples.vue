@@ -46,6 +46,13 @@
                 内容
             </div>
         </fieldset>
+
+        <fieldset>
+            <legend>圆框</legend>
+            <div style="border: 2px solid transparent;" class="czw-border-colorful">
+                内容
+            </div>
+        </fieldset>
     </section>
 </template>
 

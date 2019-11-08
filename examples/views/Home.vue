@@ -32,6 +32,10 @@
         </ul>
 
 
+        <div class="czw-radius-border-green-2" style="padding: 10px; ">
+            sss
+        </div>
+
     </section>
 </template>
 
@@ -42,7 +46,7 @@
             return {}
         },
         components: {
-            "czw-link": () => import("@/components/Link")
+           // "czw-link": () => import("@/components/Link")
         }
     }
 </script>
@@ -50,5 +54,9 @@
 
 <style scoped lang="scss">
     @import "~@scss/index";
+
+    .test{
+        @include radius-border(20px,$primary);
+    }
 
 </style>

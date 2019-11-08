@@ -7,7 +7,7 @@
 
 ## 文档
 
-[中文文档](https://otary.github.io/element-ext/)
+[中文文档](https://otary.github.io/element-ext/docs/)
 
 ## demo
 
