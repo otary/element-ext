@@ -31,5 +31,9 @@
 
   }
 
+  &-top-tag {
+    @include top-tag();
+  }
+
 
 }

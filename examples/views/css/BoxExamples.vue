@@ -3,7 +3,7 @@
         <!-- 滚动条示例 -->
         <fieldset>
             <legend>滚动条美化</legend>
-            <div style="width: 500px; height: 100px; overflow: auto;" class="czw-box-border czw-scrollbar-beautify-6">
+            <div style="width: 500px; height: 100px; overflow: auto;" class="czw-box-border czw-scrollbar-beautify">
                 <div style="width: 2000px;height: 2000px;">
                     内容
                 </div>
@@ -51,6 +51,13 @@
             <legend>圆框</legend>
             <div style="border: 2px solid transparent;" class="czw-border-colorful">
                 内容
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>书封面效果</legend>
+            <div style="width: 100px; height: 100px;" class="czw-book-cover">
+
             </div>
         </fieldset>
     </section>

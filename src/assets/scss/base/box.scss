@@ -31,10 +31,9 @@
   /**
    * 滚动条美化
    */
-  &-scrollbar-beautify-6 {
+  &-scrollbar-beautify {
     @include scrollbar-beautify(6px, 6px);
   }
-
 
   /**
    * 内联块级元素,兼容IE6
@@ -90,5 +89,13 @@
     box-shadow: 0 1px 5px $gray-100;
   }
 
+
+  /**
+   * 书籍封面效果
+   */
+  &-book-cover {
+     @include book-cover();
+     /*@include book-cover(url(http://demo.htmleaf.com/1410/201410231540/img/cover2.svg));*/
+  }
 
 }

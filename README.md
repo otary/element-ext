@@ -28,7 +28,7 @@
 - [x] edge
 
 ``` html
-<div class="czw-scrollbar-beautify-6">
+<div class="czw-scrollbar-beautify">
 
 </div>
 ```

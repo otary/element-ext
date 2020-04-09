@@ -33,7 +33,7 @@
 
 
         <div class="czw-radius-border-green-2" style="padding: 10px; ">
-            sss
+
         </div>
 
     </section>
