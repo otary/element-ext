@@ -5,7 +5,6 @@
   @keyframes #{$class-prefix}-#{$animationName} {
     @content;
   }
-
 }
 
 /**
@@ -30,6 +29,27 @@
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);
     }
-
   }
+}
+
+.#{$class-prefix} {
+
+  &-upward-card {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px) !important;
+      -webkit-transform: translateY(-6px) !important;
+      -moz-transform: translateY(-6px) !important;
+
+      box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+      -webkit-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+      -moz-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
+    }
+  }
+
+
 }

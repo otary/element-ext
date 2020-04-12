@@ -172,6 +172,13 @@
 </div>
 ```
 
+> 动画面板
+
+``` html
+<div class="czw-upward-card" style="width: 100px; height: 100px; border: 1px solid #ccc;">
+</div>
+```
+
 
 ---
 ### util

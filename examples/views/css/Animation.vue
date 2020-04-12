@@ -6,7 +6,11 @@
 
             </div>
         </fieldset>
-
+        <fieldset>
+            <legend>hover动画面板</legend>
+            <div class="czw-upward-card" style="width: 100px; height: 100px; border: 1px solid #ccc;">
+            </div>
+        </fieldset>
     </section>
 </template>
 
