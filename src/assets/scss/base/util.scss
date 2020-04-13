@@ -31,9 +31,19 @@
 
   }
 
+  /**
+   * 顶部标签
+   */
   &-top-tag {
     @include top-tag();
   }
 
+
+  /**
+   * 小点
+   */
+  &-dot {
+    @include dot();
+  }
 
 }

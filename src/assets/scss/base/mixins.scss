@@ -105,14 +105,14 @@
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), $background-image;
 }
 
-@mixin top-tag($backgroun-color: #FF6600, $color: #fff) {
+@mixin top-tag($background-color: #FF6600, $color: #fff) {
   position: absolute;
   top: 5px;
   left: -5px;
   padding: 0 5px;
   text-align: right;
   font-size: 12px;
-  background-color: $backgroun-color;
+  background-color: $background-color;
   color: $color;
 
   &::before {
@@ -120,7 +120,28 @@
     position: absolute;
     left: 1px;
     bottom: -4px;
-    border-top: 4px solid $backgroun-color;
+    border-top: 4px solid $background-color;
     border-left: 4px solid transparent;
+  }
+}
+
+/**
+ * 点
+ */
+@mixin dot($size: 6px, $background-color: #fd721f) {
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: $size;
+    height: $size;
+    background-color: $background-color;
   }
 }

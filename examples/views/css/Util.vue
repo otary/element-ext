@@ -18,10 +18,26 @@
         <fieldset>
             <legend>顶部标签</legend>
 
-            <div style="width: 200px; height: 200px; border: 1px solid #ccc; position: relative;" >
+            <div style="width: 200px; height: 200px; border: 1px solid #ccc; position: relative;">
                 <div class="czw-top-tag">热</div>
             </div>
 
+        </fieldset>
+
+        <fieldset>
+            <legend>小点</legend>
+
+            <div>
+                <a style="display: inline-block; height: 32px; line-height: 32px;">
+                    <i class="czw-dot">&nbsp;&nbsp;主题:</i> 测试下内容
+                </a>
+                <a style="display: inline-block; height: 32px; line-height: 32px;">
+                    <i class="czw-dot">&nbsp;&nbsp;主题2</i>
+                </a>
+                <a>
+                    <i class="czw-dot">&nbsp;&nbsp;主题3</i>
+                </a>
+            </div>
         </fieldset>
     </section>
 </template>
