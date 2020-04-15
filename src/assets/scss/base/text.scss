@@ -19,5 +19,11 @@
     }
   }
 
+  /**
+   * 块引号示例
+   */
+  &-text-blockquote {
+     @include blockquote();
+  }
 
 }
