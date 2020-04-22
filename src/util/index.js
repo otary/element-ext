@@ -5,5 +5,6 @@ module.exports = {
     array: require('./array'),
     dom: require('./dom'),
     number: require('./number'),
+    browser: require('./browser'),
     vueComponent: require('./vue-component')
 };

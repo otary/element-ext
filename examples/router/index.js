@@ -28,6 +28,9 @@ export default new VueRouter({
     }, {
         path: "/js/number",
         component: () => import('../views/js/Number.vue')
+    }, {
+        path: "/js/browser",
+        component: () => import('../views/js/Browser.vue')
     }
     ]
 });
