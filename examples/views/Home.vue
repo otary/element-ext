@@ -31,6 +31,13 @@
             </li>
         </ul>
 
+        <h2>JS</h2>
+
+        <ul>
+            <li>
+                <a href="#/js/number">js/number</a>
+            </li>
+        </ul>
 
         <div class="czw-radius-border-green-2" style="padding: 10px; ">
 

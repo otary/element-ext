@@ -25,6 +25,9 @@ export default new VueRouter({
     }, {
         path: "/css/util",
         component: () => import('../views/css/Util.vue')
+    }, {
+        path: "/js/number",
+        component: () => import('../views/js/Number.vue')
     }
     ]
 });
