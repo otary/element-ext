@@ -15,7 +15,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --open ./examples/index.js",
     "build": "vue-cli-service build --dest demo",
-    "build:bundle": "vue-cli-service build --target lib --name element-ext ./src/index.js",
+    "build:bundle": "vue-cli-service build --target lib --name element-ext ./src/main.js",
     "build:scss": "vue-cli-service build --target lib ./src/assets/scss/index.scss",
     "lint": "vue-cli-service lint",
     "test": "jest"

@@ -18,7 +18,25 @@ function toCamel(name, separator = '_', firstLetterCapitalized = false) {
     return firstLetter + name.substring(1).replace(/([A-Z])/g, `${separator}$1`).toLowerCase();
 }
 
+/**
+ * 左填充
+ * @param val
+ * @param size
+ * @param padStr
+ * @returns {string}
+ */
+function leftPad(val, size, padStr){
+    if(!size || !padStr){
+        return val;
+    }
+    let result = "";
+    for (let i = 0; i < size; i++) {
+        result+=padStr;
+    }
+    return result;
+}
 
 module.exports = {
-    toCamel
+    toCamel,
+    leftPad
 };
