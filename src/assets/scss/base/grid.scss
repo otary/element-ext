@@ -9,21 +9,21 @@
     }
   }
 
-  /*  768px < width */
+  /*  768px < width < 992px */
   @media (min-width: 768px) {
     &-container {
       max-width: 720px;
     }
   }
 
-  /* 992px < width  */
+  /* 992px < width  < 1230px */
   @media (min-width: 992px) {
     &-container {
       max-width: 960px;
     }
   }
 
-  /*   1230px < width */
+  /*   1230px < width < 1450px*/
   @media (min-width: 1230px) {
     &-container {
       max-width: 1200px;
@@ -36,7 +36,6 @@
       max-width: 1440px;
     }
   }
-
 
 
   @media (min-width: 576px) and (max-width: 767px) {
