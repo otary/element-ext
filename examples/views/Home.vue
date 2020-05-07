@@ -46,6 +46,15 @@
 
         </div>
 
+
+        <h2>Filter</h2>
+        <ul>
+            <li>
+                <a href="#/filter/index">
+                    filter/index
+                </a>
+            </li>
+        </ul>
     </section>
 </template>
 

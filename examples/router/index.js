@@ -31,6 +31,9 @@ export default new VueRouter({
     }, {
         path: "/js/browser",
         component: () => import('../views/js/Browser.vue')
+    }, {
+        path: "/filter/index",
+        component: ()=> import('../views/filters/index.vue')
     }
     ]
 });

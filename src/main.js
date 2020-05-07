@@ -16,3 +16,4 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = require('./util/index.js');
+module.exports = require('./filters/index.js');
