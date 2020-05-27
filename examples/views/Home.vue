@@ -40,6 +40,9 @@
             <li>
                 <a href="#/js/browser">js/browser</a>
             </li>
+            <li>
+                <a href="#/js/array">js/array</a>
+            </li>
         </ul>
 
         <div class="czw-radius-border-green-2" style="padding: 10px; ">

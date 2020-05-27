@@ -1,5 +1,9 @@
+const Vue = require('vue')
+
 /**
  * 将目录下的所有vue组件进行挂载
+ *
+ * @author chenzw
  * @param path
  * @param useSubdirectories
  * @param regExp
@@ -13,7 +17,7 @@ const loadByPath = ({path, useSubdirectories = true, regExp = /\.vue/}) => {
         const componentName = fileName.split('/')[1];
 
         // 组件挂载
-        Vue.component(componentName, component.default || component);
+        Vue.default.component(componentName, component.default || component);
     });
 
 }

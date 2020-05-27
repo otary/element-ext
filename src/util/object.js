@@ -4,6 +4,8 @@ const _conformsTo = require('lodash/conformsTo');
 
 /**
  * 浅复制
+ *
+ * @author chenzw
  * @param value
  * @returns {*}
  */
@@ -13,6 +15,8 @@ function clone(value) {
 
 /**
  * 深复制
+ *
+ * @author chenzw
  * @param value
  * @returns {*}
  */
@@ -23,6 +27,7 @@ function cloneDeep(value) {
 /**
  * 判断对象的属性是否满足某个条件
  *
+ * @author chenzw
  * @param object
  * @param source
  * @returns {boolean}
@@ -33,6 +38,8 @@ function conformsTo(object, source) {
 
 /**
  * 获取对象类型
+ *
+ * @author chenzw
  * @param o
  * @returns {string}
  */
@@ -42,6 +49,8 @@ function getType(o) {
 
 /**
  * 是否对象值
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -51,6 +60,8 @@ function isObject(value) {
 
 /**
  * 是否字符串类型
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -60,6 +71,8 @@ function isString(value) {
 
 /**
  * 是否数值类型
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -69,6 +82,8 @@ function isNumber(value) {
 
 /**
  * 是否数组类型
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -78,6 +93,8 @@ function isArray(value) {
 
 /**
  * 是否Function类型
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -87,6 +104,8 @@ function isFunction(value) {
 
 /**
  * 是否日期类型
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -96,6 +115,8 @@ function isDate(value) {
 
 /**
  * 是否IPv4
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -105,6 +126,8 @@ function isIPv4(value) {
 
 /**
  * 是否IPv6
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -114,6 +137,8 @@ function isIPv6(value) {
 
 /**
  * 是否IP（IPv4或IPv6）
+ *
+ * @author chenzw
  * @param value
  */
 function isIP(value) {
@@ -122,6 +147,8 @@ function isIP(value) {
 
 /**
  * 是否中文字符
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -131,6 +158,8 @@ function isChinese(value) {
 
 /**
  * 是否手机号
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -140,6 +169,8 @@ function isPhoneNumber(value) {
 
 /**
  * 是否电子邮箱
+ *
+ * @author chenzw
  * @param value
  */
 function isEmail(value) {
@@ -148,6 +179,8 @@ function isEmail(value) {
 
 /**
  * 是否身份证号码
+ *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */
@@ -156,7 +189,9 @@ function isIdCard(value) {
 }
 
 /**
+ * 是否URL
  *
+ * @author chenzw
  * @param value
  * @returns {boolean}
  */

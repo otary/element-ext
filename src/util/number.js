@@ -2,6 +2,7 @@ const string = require('./string');
 
 /**
  * 十进制转Hex
+ * @author chenzw
  * @param intVal
  * @param size
  * @returns {string}
@@ -19,6 +20,7 @@ function intToHex(intVal, size) {
 
 /**
  * bin转hex
+ * @author chenzw
  * @param str
  * @returns {string}
  */

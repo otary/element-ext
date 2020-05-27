@@ -1,5 +1,7 @@
 /**
  * 驼峰/Pascal转下划线格式
+ *
+ * @author chenzw
  * @param name
  * @param separator
  * @param firstLetterCapitalized
@@ -20,6 +22,8 @@ function toCamel(name, separator = '_', firstLetterCapitalized = false) {
 
 /**
  * 左填充
+ *
+ * @author chenzw
  * @param val
  * @param size
  * @param padStr

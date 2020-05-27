@@ -1,5 +1,7 @@
 /**
  * 获取url参数
+ *
+ * @author chenzw
  * @param paramName
  * @param url
  * @returns {string}
@@ -15,6 +17,8 @@ function getUriParam(paramName, url = window.location.href) {
 
 /**
  * 获取url参数列表（数组）
+ *
+ * @author chenzw
  * @param paramName
  * @param url
  * @returns {string}
@@ -26,6 +30,8 @@ function getUriParams(paramName, url = window.location.href) {
 
 /**
  * 是否存在指定的参数
+ *
+ * @author chenzw
  * @param paramName
  * @param url
  * @returns {boolean}
