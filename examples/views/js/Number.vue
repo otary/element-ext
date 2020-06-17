@@ -1,16 +1,19 @@
 <template>
     <div>
-        <button @click="calIntToHex">intToHex</button>
+        <el-button @click="calIntToHex">intToHex</el-button>
     </div>
 </template>
 
 <script>
-    import {number} from '../../../src/util/index.js';
+    import {number} from '@/util/index.js';
     export default {
         name: "Number",
         methods: {
             calIntToHex: function () {
-                alert(number.intToHex(123,5));
+                this.$notify({
+                    title: 'intToHex',
+                    message: number.intToHex(123,5)
+                });
             }
         }
     }

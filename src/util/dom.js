@@ -125,6 +125,26 @@ const once = (el, event, fn) => {
     on(el, event, listener);
 };
 
+/**
+ * 获取鼠标位置（相对于浏览器窗口）
+ * @param e
+ * @returns {{x: *, y: *}}
+ */
+const getMousePos = (event) => {
+    let e = event || window.event;
+    if (e.pageX || e.pageY) {  // 不兼容IE
+        return {
+            x: e.pageX,
+            y: e.pageY
+        }
+    } else if (e.clientX || e.clientY) {  // 不兼容Safari
+        return {
+            x: e.clientX + document.documentElement.scrollLeft + document.body.scrollLeft,
+            y: e.clientY + document.documentElement.scrollTop + document.body.scrollTop
+        }
+    }
+}
+
 
 module.exports = {
     loadCss,
@@ -133,5 +153,6 @@ module.exports = {
     supportCssProperty,
     on,
     off,
-    once
+    once,
+    getMousePos
 };

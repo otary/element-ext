@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import {browser} from '../../../src/util/index.js';
+    import {browser} from '@/util/index.js';
     export default {
         name: "Browser",
         data(){
