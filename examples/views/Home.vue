@@ -46,6 +46,9 @@
             <li>
                 <a href="#/js/dom">js/dom</a>
             </li>
+            <li>
+                <a href="#/js/string">js/string</a>
+            </li>
         </ul>
 
         <div class="czw-radius-border-green-2" style="padding: 10px; ">
