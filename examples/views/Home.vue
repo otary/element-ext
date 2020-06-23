@@ -49,12 +49,14 @@
             <li>
                 <a href="#/js/string">js/string</a>
             </li>
+            <li>
+                <a href="#/js/url">js/url</a>
+            </li>
         </ul>
 
         <div class="czw-radius-border-green-2" style="padding: 10px; ">
 
         </div>
-
 
         <h2>Filter</h2>
         <ul>

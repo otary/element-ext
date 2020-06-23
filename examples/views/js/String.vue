@@ -10,26 +10,25 @@
 
 <script>
     import {string} from '@/util/index.js';
+
     export default {
         name: "String",
-        data(){
-            return {
-
-            }
+        data() {
+            return {}
         },
         methods: {
-            render(){
+            render() {
                 let template = '你好,我叫{name}, 我今年{user.age}岁了';
                 this.$notify({
                     title: '字符串模版渲染',
                     dangerouslyUseHTMLString: true,
-                    message: '<p><b>模版</b>: '+ template + '</p>' +
+                    message: '<p><b>模版</b>: ' + template + '</p>' +
                         '<p><b>渲染后</b>: ' + string.render(template, {
-                        name: '张三',
-                        user: {
-                            age: 10
-                        }
-                    }) + '</p>'
+                            name: '张三',
+                            user: {
+                                age: 10
+                            }
+                        }) + '</p>'
                 });
             }
         }

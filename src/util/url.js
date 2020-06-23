@@ -42,10 +42,30 @@ function existsParam(paramName, url = window.location.href) {
 }
 
 /**
+ * 将Object对象转换成url参数字符串
+ *  <p>
+ *     createQueryString({
+ *         a: '2'
+ *         b: '3',
+ *         c: '4'
+ *     });  // => a=2&b=3&c=4
+ *  </p>
+ *
+ * @param oParam
+ * @returns {string}
+ */
+function createQueryString(oParam = {}) {
+    return Object.keys(oParam).reduce((s, key) => {
+        return s + (s == '' ? '' : '&') + encodeURIComponent(key) + '=' + encodeURIComponent(oParam[key]);
+    }, '');
+}
+
+/**
  * @author chenzw
  */
 module.exports = {
     getUriParam,
     getUriParams,
-    existsParam
+    existsParam,
+    createQueryString
 };
