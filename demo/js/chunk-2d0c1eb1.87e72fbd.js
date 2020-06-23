@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c1eb1"],{"47a9":function(e,t,n){"use strict";n.r(t);var o=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",[n("el-button",{attrs:{type:"primary",size:"mini"},on:{click:e.getMousePos}},[e._v("获取鼠标位置")])],1)},s=[],i=n("4260"),u={name:"Dom",methods:{getMousePos:function(){var e=i["dom"].getMousePos();this.$notify({title:"鼠标位置",message:e})}}},a=u,c=n("2877"),r=Object(c["a"])(a,o,s,!1,null,"32512550",null);t["default"]=r.exports}}]);
+//# sourceMappingURL=chunk-2d0c1eb1.87e72fbd.js.map
