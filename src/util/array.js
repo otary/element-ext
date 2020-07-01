@@ -14,11 +14,30 @@ function isArray(value) {
  * @param arr
  * @returns {any[]}
  */
-function flatUniqueSort(arr) {
-    return Array.from(new Set(arr.flat(Infinity))).sort((a, b) => a - b);
+function flatUniqueSort(array) {
+    return Array.from(new Set(array.flat(Infinity))).sort((a, b) => a - b);
+}
+
+/**
+ * 分组
+ * @param array
+ * @param fieldName 分组的字段
+ */
+function group(array, fieldName) {
+    let result = {};
+    array.forEach((item)=> {
+        let itemValues = result[item[fieldName]];
+        if (!itemValues) {
+            itemValues = [];
+        }
+        itemValues.push(item);
+        result[item[fieldName]] = itemValues;
+    })
+    return result;
 }
 
 module.exports = {
     isArray,
-    flatUniqueSort
+    flatUniqueSort,
+    group
 };
