@@ -6,5 +6,6 @@ module.exports = {
     dom: require('./dom'),
     number: require('./number'),
     browser: require('./browser'),
-    vueComponent: require('./vue-component')
+    vueComponent: require('./vue-component'),
+    regex: require('./regex')
 };
