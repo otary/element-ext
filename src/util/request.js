@@ -1,4 +1,5 @@
 import axios from 'axios';
+import qs from 'qs';
 
 // 创建axios实例
 const service = axios.create({
@@ -6,6 +7,9 @@ const service = axios.create({
     headers: {
         Pragma: 'no-cache',
         'Cache-Control': 'no-cache'
+    },
+    paramsSerializer: function (params) {
+        return qs.stringify(params, {indices: false})
     }
 });
 

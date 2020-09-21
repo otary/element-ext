@@ -14,12 +14,9 @@ const install = function (Vue, opts = {}) {
     Vue.prototype.$$util = Util;
 };
 
-
-
 if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
-
 
 export default {
     install
