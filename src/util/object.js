@@ -122,12 +122,5 @@ module.exports = {
     isNumber,
     isArray,
     isFunction,
-    isDate,
-    isIPv4,
-    isIPv6,
-    isIP,
-    isChinese,
-    isEmail,
-    isIdCard,
-    isURL
+    isDate
 };

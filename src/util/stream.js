@@ -18,7 +18,7 @@ function download(url) {
  *    axios.post(`/downloadExp`, data, {
  *      responseType: 'arraybuffer'
  *   }).then((resp)=> {
- *      stream.downloadArrayBuffer(resp.data);
+ *      stream.downloadArrayBuffer(resp.data, fileName);
  *   });
  * </p>
  */
@@ -32,6 +32,7 @@ function downloadArrayBuffer(data, fileName) {
     window.URL.revokeObjectURL(aEl.href);
     document.body.removeChild(aEl);
 }
+
 
 
 module.exports = {
