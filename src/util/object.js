@@ -113,10 +113,13 @@ function isDate(value) {
     return getType(value) === "Date";
 }
 
+
+
 module.exports = {
     clone,
     cloneDeep,
     conformsTo,
+    getType,
     isObject,
     isString,
     isNumber,

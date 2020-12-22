@@ -3,7 +3,7 @@
  * @author chenzw
  * @param url
  */
-const loadCss = (url) => {
+function loadCss(url) {
     let tag = document.createElement('link');
     for (let i = 0; i < document.links.length; i++) {
         if (document.links[0].href === url) {
@@ -15,14 +15,14 @@ const loadCss = (url) => {
     tag.setAttribute("href", url);
 
     document.body.appendChild(tag);
-};
+}
 
 /**
  * 加载js资源
  * @author chenzw
  * @param url
  */
-const loadScript = (url) => {
+function loadScript(url) {
     let tag = document.createElement('script');
     for (let i = 0; i < document.scripts.length; i++) {
         if (document.scripts[0].src === url) {
@@ -32,7 +32,7 @@ const loadScript = (url) => {
     tag.setAttribute("src", url);
 
     document.body.appendChild(tag);
-};
+}
 
 /**
  * 延迟阻塞执行
@@ -40,7 +40,7 @@ const loadScript = (url) => {
  * @param matchFn
  * @param callbackFn
  */
-const delayInit = (matchFn, callbackFn) => {
+function delayInit(matchFn, callbackFn) {
     if (matchFn()) {
         let timer = setInterval(function () {
             if (matchFn()) {
@@ -51,7 +51,7 @@ const delayInit = (matchFn, callbackFn) => {
     } else {
         return callbackFn();
     }
-};
+}
 
 
 /**
@@ -60,12 +60,12 @@ const delayInit = (matchFn, callbackFn) => {
  * @param cssPropertyName
  * @returns {boolean}
  */
-const supportCssProperty = (cssPropertyName) => {
+function supportCssProperty(cssPropertyName) {
     if (cssPropertyName in document.documentElement.style) {
         return true;
     }
     return false;
-};
+}
 
 /**
  * 添加监听事件
@@ -115,7 +115,7 @@ const off = (function () {
  * @param event
  * @param fn
  */
-const once = (el, event, fn) => {
+function once(el, event, fn) {
     const listener = function () {
         if (fn) {
             fn.apply(this, [el, event, fn]);
@@ -123,14 +123,14 @@ const once = (el, event, fn) => {
         off(el, event, listener);
     };
     on(el, event, listener);
-};
+}
 
 /**
  * 获取鼠标位置（相对于浏览器窗口）
  * @param e
  * @returns {{x: *, y: *}}
  */
-const getMousePos = (event) => {
+function getMousePos(event) {
     let e = event || window.event;
     if (e.pageX || e.pageY) {  // 不兼容IE
         return {
@@ -145,6 +145,77 @@ const getMousePos = (event) => {
     }
 }
 
+/**
+ * 判断元素是否有指定的类
+ * @param el
+ * @param className
+ * @returns {boolean}
+ */
+function hasClass(el, className) {
+    return el.classList.contains(className);
+}
+
+/**
+ * 切换元素的class（有则删除，无则添加）
+ * @param el
+ * @param className
+ */
+function toggleClass(el, className) {
+    el.classList.toggle(className);
+}
+
+/**
+ * 获取当前页面的滚动位置
+ *
+ * @param el
+ * @returns {{x: number, y: number}}
+ */
+function getScrollPosition(el = window) {
+    return {
+        // scrollLeft和scrollTop兼容IE8
+        x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+        y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+    }
+}
+
+/**
+ * 父元素是否包含指定的子元素
+ *
+ * @param parentEl
+ * @param childEl
+ * @returns {boolean|*}
+ */
+function elContains(parentEl, childEl) {
+    return parentEl !== childEl && parentEl.contains(childEl);
+}
+
+/**
+ * 元素在当前视口下是否可见
+ * @param el
+ * @param partiallyVisible 是否开启全屏
+ */
+function elVisibleInViewport(el, partiallyVisible = false) {
+    const {top, left, bottom, right} = el.getBoundingClientRect();
+    const {innerHeight, innerWidth} = window;
+    return partiallyVisible
+        ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+}
+
+/**
+ * 获取元素中的所有图像
+ *
+ * @param el
+ * @param includeDuplicates 是否去重
+ * @returns {*[]}
+ */
+function getImages(el, includeDuplicates = false) {
+    const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
+    return includeDuplicates ? images : [...new Set(images)];
+}
+
+
 
 module.exports = {
     loadCss,
@@ -154,5 +225,11 @@ module.exports = {
     on,
     off,
     once,
-    getMousePos
+    getMousePos,
+    hasClass,
+    toggleClass,
+    getScrollPosition,
+    elContains,
+    elVisibleInViewport,
+    getImages
 };

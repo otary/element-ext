@@ -31,6 +31,16 @@ test('object.conformsTo', () => {
     })).toBeTruthy();
 });
 
-test('object.isIPv4', ()=>{
-    // expect(object.isIPv4('192.168.10.10')).toBeTruthy();
+test('object.getType', () => {
+    const array = [1, 2];
+    const o = {};
+    const n = 1;
+    const b = false;
+    const s = "xxx";
+    expect(object.getType(array)).toBe('Array');
+    expect(object.getType(o)).toBe('Object');
+    expect(object.getType(n)).toBe('Number');
+    expect(object.getType(b)).toBe('Boolean');
+    expect(object.getType(s)).toBe('String');
 });
+

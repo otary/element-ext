@@ -8,5 +8,6 @@ module.exports = {
     browser: require('./browser'),
     vueComponent: require('./vue-component'),
     regex: require('./regex'),
-    file: require('./file')
+    file: require('./file'),
+    date: require('./date')
 };
