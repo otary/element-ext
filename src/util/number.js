@@ -105,7 +105,32 @@ function div(a, b) {
     return (ia / ib) * Math.pow(10, bDigits - aDigits)
 }
 
+/**
+ * 相乘（解决小数精度丢失问题）
+ * @param a
+ * @param b
+ * @returns {number}
+ */
+function multiply(a, b) {
+    const m = getDecimalDigits(a) +  getDecimalDigits(b);
+    const ia = Number(a.toString().replace(".", ""));
+    const ib = Number(b.toString().replace(".", ""));
+    return ia * ib / Math.pow(10, m);
+}
 
+/**
+ * 数字超过规定大小加上指定的后缀（如: 数字超过99显示99+）
+ *
+ * @param num
+ * @param maxNum
+ */
+function crossNum(num, maxNum, suffix = '+') {
+    const n = num ? num - 0 : 0;
+    if (n > maxNum) {
+        return maxNum + suffix;
+    }
+    return n;
+}
 
 
 module.exports = {
@@ -116,5 +141,7 @@ module.exports = {
     getDecimalDigits,
     add,
     sub,
-    div
+    div,
+    multiply,
+    crossNum
 };

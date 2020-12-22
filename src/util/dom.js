@@ -216,6 +216,23 @@ function getImages(el, includeDuplicates = false) {
 }
 
 
+/**
+ * 转义html(防XSS攻击)
+ */
+function escapeHTML(html) {
+    return html.replace(
+        /[&<>'"]/g,
+        tag =>
+            ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag)
+    );
+}
+
 
 module.exports = {
     loadCss,
@@ -231,5 +248,6 @@ module.exports = {
     getScrollPosition,
     elContains,
     elVisibleInViewport,
-    getImages
+    getImages,
+    escapeHTML
 };

@@ -24,3 +24,12 @@ test('number.sub', () => {
 test('number.div', () => {
    expect(number.div(6.89, 2)).toBe(3.4450000000000003);
 });
+
+test('number.multiply', ()=> {
+    expect(number.multiply(2.34, 1.34)).toBe(3.1356);
+});
+
+test('number.crossNum', () => {
+   expect(number.crossNum(124, 10)).toBe('10+');
+   expect(number.crossNum(124, 10, '+')).toBe('10+');
+});
