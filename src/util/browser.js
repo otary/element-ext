@@ -40,8 +40,27 @@ function isEdge() {
     return !Vue.default.prototype.$isServer && navigator.userAgent.indexOf('Edge') > -1;
 }
 
+/**
+ * 是否移动设备
+ * @returns {boolean}
+ */
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+/**
+ * 判断设备类型
+ *
+ * @returns {string}
+ */
+function detectDeviceType() {
+    return isMobile() ? 'Mobile' : 'Desktop';
+}
+
 module.exports = {
     getFingerPrint,
     isIE,
-    isEdge
+    isEdge,
+    detectDeviceType,
+    isMobile
 };

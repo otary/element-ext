@@ -25,7 +25,7 @@ function flatUniqueSort(array) {
  */
 function group(array, fieldName) {
     let result = {};
-    array.forEach((item)=> {
+    array.forEach((item) => {
         let itemValues = result[item[fieldName]];
         if (!itemValues) {
             itemValues = [];
@@ -36,8 +36,19 @@ function group(array, fieldName) {
     return result;
 }
 
+/**
+ * 数组交集
+ *
+ * @param arr1
+ * @param arr2
+ */
+function intersection(arr1, arr2) {
+    return arr1.filter(v => arr2.includes(v));
+}
+
 module.exports = {
     isArray,
     flatUniqueSort,
-    group
+    group,
+    intersection
 };

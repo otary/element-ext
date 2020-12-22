@@ -91,5 +91,6 @@ module.exports = {
     isChinese,
     isEmail,
     isIdCard,
-    isURL
+    isURL,
+    isPhoneNumber
 };

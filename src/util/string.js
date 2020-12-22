@@ -47,26 +47,44 @@ function leftPad(val, size, padStr) {
  * @returns {*}
  */
 function render(template, context) {
-    let tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
+    let tokenReg = /(\\)?\{([^\\{\\}\\]+)(\\)?\}/g;
 
     return template.replace(tokenReg, function (word, slash1, token, slash2) {
         if (slash1 || slash2) {
             return word.replace('\\', '');
         }
         let variables = token.replace(/\s/g, '').split('.');
-        let currentObject = context;
+        let current = context;
         let i, length;
 
         for (i = 0, length = variables.length; i < length; ++i) {
-            currentObject = currentObject[variables[i]];
-            if (currentObject === undefined || currentObject === null) return '';
+            current = current[variables[i]];
+            if (current === undefined || current === null) return '';
         }
-        return currentObject;
+        return current;
     })
+}
+
+
+/**
+ * 截取字符串并添加省略号
+ *
+ * @param str
+ * @param length
+ */
+function ellipsis(str, length) {
+    if (!str || str.length == 0) {
+        return "";
+    }
+    if (str.length > length) {
+        return str.substr(0, length) + "...";
+    }
+    return str;
 }
 
 module.exports = {
     toCamel,
     leftPad,
-    render
+    render,
+    ellipsis
 };
