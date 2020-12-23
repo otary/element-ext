@@ -60,7 +60,7 @@ function delayInit(matchFn, callbackFn) {
  * @param cssPropertyName
  * @returns {boolean}
  */
-function supportCssProperty(cssPropertyName) {
+function cssPropertySupported(cssPropertyName) {
     if (cssPropertyName in document.documentElement.style) {
         return true;
     }
@@ -127,6 +127,7 @@ function once(el, event, fn) {
 
 /**
  * 获取鼠标位置（相对于浏览器窗口）
+ *
  * @param e
  * @returns {{x: *, y: *}}
  */
@@ -165,7 +166,7 @@ function toggleClass(el, className) {
 }
 
 /**
- * 获取当前页面的滚动位置
+ * 获取元素的滚动位置
  *
  * @param el
  * @returns {{x: number, y: number}}
@@ -215,7 +216,6 @@ function getImages(el, includeDuplicates = false) {
     return includeDuplicates ? images : [...new Set(images)];
 }
 
-
 /**
  * 转义html(防XSS攻击)
  */
@@ -233,12 +233,87 @@ function escapeHTML(html) {
     );
 }
 
+/**
+ * 获取窗口尺寸
+ * @returns {{w: number, h: number}}
+ */
+function getViewport() {
+    if (window.innerWidth) {
+        return {
+            w: window.innerWidth,
+            h: window.innerHeight
+        }
+    } else {
+        // ie8及其以下
+        if (document.compatMode === "BackCompat") {
+            // 怪异模式
+            return {
+                w: document.body.clientWidth,
+                h: document.body.clientHeight
+            }
+        } else {
+            // 标准模式
+            return {
+                w: document.documentElement.clientWidth,
+                h: document.documentElement.clientHeight
+            }
+        }
+    }
+}
+
+/**
+ * 滚动到页面的最下/最上
+ * @param isEnd
+ */
+function smoothScroll(scrollToEnd) {
+    const scrollDirection = (scrollToEnd == true ? "end": "start");
+    document.documentElement.scrollIntoView({
+        behavior: "smooth", // 平滑
+        block: scrollDirection,       // end向下滑动  start向上滑动
+        inline: "nearest"
+    });
+}
+
+function openWindow(url, windowName, width, height) {
+    const x = parseInt(screen.width / 2.0) - width / 2.0;
+    const y = parseInt(screen.height / 2.0) - height / 2.0;
+    const isMSIE = navigator.appName == "Microsoft Internet Explorer";
+    if (isMSIE) {
+        let p = "resizable=1,location=no,scrollbars=no,width=";
+        p = p + width;
+        p = p + ",height=";
+        p = p + height;
+        p = p + ",left=";
+        p = p + x;
+        p = p + ",top=";
+        p = p + y;
+        window.open(url, windowName, p);
+    } else {
+        const win = window.open(
+            url,
+            "ZyiisPopup",
+            "top=" +
+            y +
+            ",left=" +
+            x +
+            ",scrollbars=" +
+            scrollbars +
+            ",dialog=yes,modal=yes,width=" +
+            width +
+            ",height=" +
+            height +
+            ",resizable=no"
+        );
+        eval("try { win.resizeTo(width, height); } catch(e) { }");
+        win.focus();
+    }
+}
 
 module.exports = {
     loadCss,
     loadScript,
     delayInit,
-    supportCssProperty,
+    cssPropertySupported,
     on,
     off,
     once,
@@ -249,5 +324,8 @@ module.exports = {
     elContains,
     elVisibleInViewport,
     getImages,
-    escapeHTML
+    escapeHTML,
+    getViewport,
+    smoothScroll,
+    openWindow
 };
