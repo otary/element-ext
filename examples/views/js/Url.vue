@@ -17,7 +17,6 @@
                     b: '2',
                     c: '3'
                 });
-
                 this.$notify({
                     title: 'createQueryString',
                     dangerouslyUseHTMLString: true,
@@ -25,10 +24,7 @@
                         '<p> => ' + queryString + '</p>'
                 });
             }
-
-
         }
-
     }
 </script>
 

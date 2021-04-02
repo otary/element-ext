@@ -66,6 +66,16 @@
                 </a>
             </li>
         </ul>
+
+
+        <h2>主题</h2>
+        <ul>
+            <li>
+                <a href="#/theme/index">
+                    theme/index
+                </a>
+            </li>
+        </ul>
     </section>
 </template>
 

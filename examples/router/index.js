@@ -49,6 +49,9 @@ export default new VueRouter({
     }, {
         path: "/test/index",
         component: () => import('../views/test/index.vue')
+    },{
+        path: "/theme/index",
+        component: () => import('../views/theme/index.vue')
     }
     ]
 });
