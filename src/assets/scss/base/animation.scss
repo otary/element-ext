@@ -34,6 +34,9 @@
 
 .#{$class-prefix} {
 
+  /**
+   * 面板hover动效
+   */
   &-upward-card {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -50,6 +53,9 @@
       -moz-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, .3);
     }
   }
+
+
+
 
 
 }

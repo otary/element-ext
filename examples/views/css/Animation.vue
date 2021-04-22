@@ -8,7 +8,27 @@
         </fieldset>
         <fieldset>
             <legend>hover动画面板</legend>
+            <el-alert type="success">class="czw-upward-card"</el-alert>
             <div class="czw-upward-card" style="width: 100px; height: 100px; border: 1px solid #ccc;">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>hover效果</legend>
+            <div>
+                <el-alert type="success">class="czw-grayscale czw-grayscale__hover"</el-alert>
+                <a class="czw-grayscale czw-grayscale__hover"
+                    style="display: inline-block; width: 400px; height: 300px; background: url(https://t7.baidu.com/it/u=2168645659,3174029352&fm=193&f=GIF); background-size: cover;">
+
+                </a>
+            </div>
+
+            <br>
+            <div>
+                <el-alert type="success">hover背景变淡（opacity）</el-alert>
+                <div class="hover-button">
+                    测试按钮
+                </div>
             </div>
         </fieldset>
     </section>
@@ -30,5 +50,17 @@
         border-radius: 50%;
 
         animation: czw-pulsate-2 1s ease-out infinite;
+    }
+
+    .hover-button {
+        padding: 10px;
+        border: 1px solid #ddd;
+
+        background-color: orange;
+
+        &:hover {
+            opacity: .7;
+            transition: .3s;
+        }
     }
 </style>

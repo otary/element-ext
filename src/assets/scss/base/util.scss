@@ -14,6 +14,11 @@
     -o-filter: grayscale(100%);
   }
 
+  &-grayscale__hover:hover {
+    filter: none;
+    transition-duration: .3s;
+  }
+
   /**
    * 三角箭头
    * eg. czw-triangle

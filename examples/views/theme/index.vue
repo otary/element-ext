@@ -18,17 +18,11 @@
         methods: {
             changeTheme: function(name) {
                 const classList = this.$refs.box.classList;
-                let activeThemes = [];
                 classList.forEach((item)=> {
                     if (item.endsWith('theme')) {
-                        activeThemes.push(item)
+                        classList.remove(item)
                     }
                 });
-
-                for (const activeTheme of activeThemes) {
-                    classList.remove(activeTheme);
-                }
-
                 this.$refs.box.classList.add(name);
             }
         }
