@@ -19,17 +19,29 @@
                 <el-alert type="success">class="czw-grayscale czw-grayscale__hover"</el-alert>
                 <a class="czw-grayscale czw-grayscale__hover"
                     style="display: inline-block; width: 400px; height: 300px; background: url(https://t7.baidu.com/it/u=2168645659,3174029352&fm=193&f=GIF); background-size: cover;">
-
                 </a>
             </div>
 
             <br>
+
             <div>
                 <el-alert type="success">hover背景变淡（opacity）</el-alert>
                 <div class="hover-button">
                     测试按钮
                 </div>
             </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>动态下划线</legend>
+
+            <a class="czw-animation-underline">
+                 从左到右的动态下划线
+            </a>
+
+            <a class="czw-animation-underline__scale">
+                中间到两端的动态下划线
+            </a>
         </fieldset>
     </section>
 </template>
@@ -55,7 +67,6 @@
     .hover-button {
         padding: 10px;
         border: 1px solid #ddd;
-
         background-color: orange;
 
         &:hover {

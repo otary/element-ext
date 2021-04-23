@@ -16,6 +16,7 @@
 
   &-grayscale__hover:hover {
     filter: none;
+    -webkit-filter: none;
     transition-duration: .3s;
   }
 
@@ -33,7 +34,6 @@
         @include triangle($direction, $i*2 + 'px');
       }
     }
-
   }
 
   /**

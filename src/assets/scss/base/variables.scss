@@ -1,5 +1,8 @@
 $class-prefix: "czw";
 
+html {
+  --theme-color: #70C000;
+}
 
 /**
  * 基础字符集
@@ -7,7 +10,6 @@ $class-prefix: "czw";
 $font-family-sans: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", "Source Code Pro", monospace, "Microsoft YaHei" !default;
 $font-family-base: $font-family-sans !default;
-
 
 /**
  * 颜色
