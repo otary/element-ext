@@ -32,6 +32,7 @@
   }
 }
 
+
 .#{$class-prefix} {
 
   /**
@@ -95,11 +96,12 @@
         opacity: 1;
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
+      }
+    }
+
+
+
   }
-}
-}
-
-
 
 
 }

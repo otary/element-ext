@@ -5,6 +5,12 @@
             <div class="pulsate">
 
             </div>
+
+            <br>
+
+            <div class="my-pulse">
+                hover扩散
+            </div>
         </fieldset>
         <fieldset>
             <legend>hover动画面板</legend>
@@ -52,6 +58,18 @@
     }
 </script>
 
+<style lang="scss">
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 #409eff;
+        }
+
+        80% {
+            box-shadow:0 0 0 20px #fff;
+        }
+    }
+</style>
+
 <style scoped lang="scss">
     @import "~@scss/index";
 
@@ -63,6 +81,14 @@
 
         animation: czw-pulsate-2 1s ease-out infinite;
     }
+
+    .my-pulse:hover {
+        -webkit-transition-duration: .4s;
+        transition-duration: .4s;
+        -webkit-animation: pulse 1s;
+        animation: pulse 1s;
+    }
+
 
     .hover-button {
         padding: 10px;
