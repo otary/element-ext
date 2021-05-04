@@ -1,6 +1,5 @@
 @import "variables";
 
-
 @mixin keyframes($animationName) {
   @keyframes #{$class-prefix}-#{$animationName} {
     @content;
@@ -29,6 +28,22 @@
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);
     }
+  }
+}
+
+/**
+ * 波动
+ */
+@keyframes #{$class-prefix}-fluctuate {
+  0%,100%,80% {
+    height: 10px;
+    -webkit-box-shadow: 0 0 #f50;
+    box-shadow: 0 0 #f50;
+  }
+  40% {
+    height:10px;
+    -webkit-box-shadow: 0 -4px #f50;
+    box-shadow: 0 -4px #f50;
   }
 }
 
@@ -98,9 +113,46 @@
         transform: scaleX(1);
       }
     }
+  }
 
 
+  /**
+    * 动态柱状图
+    */
+  &-histogram-fluctuate {
+    &::before, &::after {
+      position: absolute;
+      width: 2px;
+      height: 6px;
+      content: '';
+      background: #f50;
+    }
 
+    &::before {
+      left: -4px;
+      -webkit-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.4s;
+      -moz-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.4s;
+      -o-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.4s;
+      animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.4s;
+    }
+
+    &::after {
+      right: -4px;
+      -webkit-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out;
+      -moz-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out;
+      -o-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out;
+      animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out;
+    }
+
+    display: inline-block;
+    position: relative;
+    width: 2px;
+    height: 6px;
+    background: #f50;
+    -webkit-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.2s;
+    -moz-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.2s;
+    -o-animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.2s;
+    animation: #{$class-prefix}-fluctuate infinite 1s ease-in-out -.2s;
   }
 
 

@@ -49,6 +49,15 @@
                 中间到两端的动态下划线
             </a>
         </fieldset>
+
+        <fieldset>
+            <legend>波浪柱状图</legend>
+
+            <em class="czw-histogram-fluctuate">
+
+            </em>
+
+        </fieldset>
     </section>
 </template>
 
