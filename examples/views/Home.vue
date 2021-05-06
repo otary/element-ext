@@ -29,6 +29,9 @@
             <li>
                 <a href="#/components/marquee-example">components/marquee-example</a>
             </li>
+            <li>
+                <a href="#/components/text-animated-example">components/text-animated-example</a>
+            </li>
         </ul>
 
         <h2>JS</h2>
@@ -66,7 +69,6 @@
                 </a>
             </li>
         </ul>
-
 
         <h2>主题</h2>
         <ul>

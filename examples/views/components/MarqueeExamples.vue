@@ -1,7 +1,5 @@
 <template>
-
     <section>
-
         <fieldset>
             <legend>默认</legend>
             <czw-marquee width="200px" height="150px" class="box-border">

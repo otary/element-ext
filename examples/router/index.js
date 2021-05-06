@@ -11,6 +11,9 @@ export default new VueRouter({
         path: "/components/marquee-example",
         component: () => import('../views/components/MarqueeExamples.vue')
     }, {
+        path: "/components/text-animated-example",
+        component: () => import('../views/components/TextAnimatedExamples.vue')
+    },{
         path: "/css/box",
         component: () => import('../views/css/BoxExamples.vue')
     }, {

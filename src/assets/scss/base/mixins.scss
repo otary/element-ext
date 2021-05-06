@@ -29,6 +29,13 @@
   @return ($px / $base-font-size) + rem;
 }
 
+/**
+ * 从列表中随机取数
+ */
+@function randomValue($list) {
+  @return nth($list, random(length($list)))
+}
+
 
 /**
  * 最小尺寸, 兼容IE6
