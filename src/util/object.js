@@ -1,6 +1,7 @@
 const _clone = require('lodash/clone');
 const _cloneDeep = require('lodash/cloneDeep');
 const _conformsTo = require('lodash/conformsTo');
+const _merge = require('lodash/merge')
 
 /**
  * 浅复制
@@ -22,6 +23,15 @@ function clone(value) {
  */
 function cloneDeep(value) {
     return _cloneDeep(value);
+}
+
+/**
+ * 合并对象
+ * @param object
+ * @param source
+ */
+function merge(object, source) {
+    return _merge(object, source);
 }
 
 /**
@@ -113,7 +123,27 @@ function isDate(value) {
     return getType(value) === "Date";
 }
 
+/**
+ * 获取对象深层值
+ * @param o
+ * @param nodePath
+ * @returns {*}
+ */
+function getNodePathValue(o, nodePath) {
+    if (!o) {
+        return null;
+    }
 
+    if (!nodePath) {
+        return null;
+    }
+
+    const nodes = nodePath.split(".");
+    if (nodes.length == 1) {
+        return o[nodePath];
+    }
+    return getNodePathValue(o[nodes[0]], nodePath.substr(nodes[0].length + 1));
+}
 
 module.exports = {
     clone,
@@ -125,5 +155,6 @@ module.exports = {
     isNumber,
     isArray,
     isFunction,
-    isDate
+    isDate,
+    getNodePathValue
 };

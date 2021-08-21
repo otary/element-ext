@@ -34,6 +34,18 @@ function hexToRgbString(hexColor) {
     return "RGB(" + rgb.r + "," + rgb.g + "," + rgb.b + ")";
 }
 
+/**
+ * 透明度转Hex
+ * @param opacity
+ */
+function opacityToHex(opacity) {
+    let hex = Math.floor((1 - (opacity/100)) * 255).toString(16);
+    if (hex.length < 2) {
+        hex = "0" + hex;
+    }
+    return hex;
+}
+
 function toLongHex(shortHexColor) {
     let result = '';
     for (let i = 0; i < shortHexColor.length; i++) {
@@ -45,6 +57,7 @@ function toLongHex(shortHexColor) {
 
 module.exports = {
     hexToRgb,
-    hexToRgbString
+    hexToRgbString,
+    opacityToHex
 };
 

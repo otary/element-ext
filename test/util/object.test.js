@@ -44,3 +44,10 @@ test('object.getType', () => {
     expect(object.getType(s)).toBe('String');
 });
 
+
+test('object.merge', ()=> {
+    expect(object.merge({a:1}, {b: 1})).toBe({
+        a: 1,
+        b: 1
+    })
+});
