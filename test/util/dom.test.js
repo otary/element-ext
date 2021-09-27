@@ -19,8 +19,8 @@ test('dom.delayInit', () => {
 });
 
 
-test('dom.supportCssProperty', () => {
-    expect(dom.supportCssProperty("textShadow")).toBeTruthy();
+test('dom.cssPropertySupported', () => {
+    expect(dom.cssPropertySupported("textShadow")).toBeTruthy();
 });
 
 test('dom.escapeHTML', ()=> {

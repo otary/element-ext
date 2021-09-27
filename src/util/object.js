@@ -156,5 +156,6 @@ module.exports = {
     isArray,
     isFunction,
     isDate,
-    getNodePathValue
+    getNodePathValue,
+    merge
 };
