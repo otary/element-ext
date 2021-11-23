@@ -12,7 +12,7 @@ function getScreenInfo() {
     const inWidth = window.screen.width / ppi;
     const inHeight = window.screen.height / ppi;
     const inDevice = Math.round(Math.sqrt(inWidth * inWidth + inHeight * inHeight));
-    const cunDevice = Math.round(Math.sqrt(inWidth * inWidth + inHeight * inHeight) * 0.00762);
+    const cunDevice = Math.round(Math.sqrt(inWidth * inWidth + inHeight * inHeight) * 0.762);
 
     return {
         ppi,
