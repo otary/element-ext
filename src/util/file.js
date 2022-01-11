@@ -58,12 +58,29 @@ function dataURL2Blob(dataURL) {
     return new Blob([u8arr], {type: mime});
 }
 
-
+/**
+ * 文件选择
+ * @param opts
+ */
+export function choiceFile(opts = {}) {
+    const inputEl = document.createElement("input");
+    inputEl.setAttribute("type", "file");
+    if (opts.accept) {
+        inputEl.setAttribute("accept", opts.accept);
+    }
+    inputEl.onchange = function (e) {
+        if (typeof opts.callback == 'function') {
+            opts.callback(e.target.files);
+        }
+    };
+    inputEl.click();
+}
 
 module.exports = {
     getFileExtension,
     getFileName,
     file2DataURL,
     dataURL2File,
-    dataURL2Blob
+    dataURL2Blob,
+    choiceFile
 };
