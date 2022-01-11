@@ -63,17 +63,15 @@ function dataURL2Blob(dataURL) {
  * @param opts
  */
 export function choiceFile(opts = {}) {
-    const inputEl = document.createElement("input");
-    inputEl.setAttribute("type", "file");
-    if (opts.accept) {
-        inputEl.setAttribute("accept", opts.accept);
-    }
-    inputEl.onchange = function (e) {
-        if (typeof opts.callback == 'function') {
-            opts.callback(e.target.files);
+    return new Promise((resolve, reject) => {
+        const inputEl = document.createElement("input");
+        inputEl.setAttribute("type", "file");
+        if (opts.accept) {
+            inputEl.setAttribute("accept", opts.accept);
         }
-    };
-    inputEl.click();
+        inputEl.onchange = (e) => resolve(e.target.files);
+        inputEl.click();
+    });
 }
 
 module.exports = {
