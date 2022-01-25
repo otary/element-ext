@@ -74,11 +74,21 @@ export function choiceFile(opts = {}) {
     });
 }
 
+/**
+ * 将对象转成url（blob）
+ * @param object
+ * @returns {string}
+ */
+export function createObjectURL(object) {
+    return (window.URL) ? window.URL.createObjectURL(object) : window.webkitURL.createObjectURL(object);
+}
+
 module.exports = {
     getFileExtension,
     getFileName,
     file2DataURL,
     dataURL2File,
     dataURL2Blob,
-    choiceFile
+    choiceFile,
+    createObjectURL
 };
