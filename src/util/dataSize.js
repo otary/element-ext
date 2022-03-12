@@ -5,7 +5,7 @@
  */
 function humanReadable(size) {
     if (size < 1024) {
-        return size +  ' Byte';
+        return size +  'Byte';
     }
     if (size < 1024 * 1024) {
         return (size / 1024).toFixed(2) + 'KB';

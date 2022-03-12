@@ -33,8 +33,8 @@ function leftPad(val, size, padStr) {
     if (!size || !padStr) {
         return val;
     }
-    let result = "";
-    for (let i = 0; i < size; i++) {
+    let result = val;
+    for (let i = 0; i < size - val.length; i++) {
         result += padStr;
     }
     return result;
