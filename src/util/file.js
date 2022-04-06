@@ -59,6 +59,32 @@ function dataURL2Blob(dataURL) {
 }
 
 /**
+ * ArrayBuffer 转 Base64
+ * @param arrayBuffer
+ * @returns {string}
+ */
+export function arrayBuffer2base64(arrayBuffer) {
+    let binary = "";
+    let bytes = new Uint8Array(arrayBuffer);
+    let len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+}
+
+/**
+ * ArrayBuffer 转 DataURL
+ * @param arrayBuffer
+ * @param imageType
+ * @returns {string}
+ */
+export function arrayBuffer2DataURL(arrayBuffer, imageType) {
+    return `data:${imageType};base64,` + arrayBuffer2base64(arrayBuffer);
+}
+
+
+/**
  * 文件选择
  * @param opts
  */
@@ -83,6 +109,141 @@ export function createObjectURL(file) {
     return (window.URL) ? window.URL.createObjectURL(file) : window.webkitURL.createObjectURL(file);
 }
 
+
+
+function findChild(childrens = [], label, opts) {
+    const found = childrens.find((item) => {
+        return item[opts.labelField] === label;
+    });
+    if (found) {
+        return found;
+    }
+    const node = {};
+    node[opts.labelField] = label;
+    childrens.push(node);
+    return node;
+}
+
+/**
+ * 生成树形结构
+ * @param fileList
+ * @param opts
+ * @returns {Array}
+ */
+export function list2tree(fileList = [], opts = {}) {
+    opts = Object.assign({
+        originalTree: [],
+        pathField: 'path',
+        labelField: 'label',
+        childrenField: 'childrens',
+        extFields: () => {
+            return {};
+        }
+    }, opts);
+
+    const originalTree = opts.originalTree;
+
+    fileList.forEach((item) => {
+        const pathParts = extractPropVal(item, opts.pathField).split('/');
+        let childrens = originalTree;
+        for (let i = 0; i < pathParts.length; i++) {
+            const pathPart = pathParts[i];
+            const node = findChild(childrens, pathPart, opts);
+            const isLeaf = (i === pathParts.length - 1);
+            Object.assign(node,
+                {leaf: isLeaf},
+                opts.extFields(item, isLeaf) || {}
+            );
+            if (!node[opts.childrenField]) {
+                node[opts.childrenField] = [];
+            }
+            childrens = node[opts.childrenField];
+        }
+    });
+    return originalTree;
+}
+
+function extractPropVal(o, path) {
+    if (path.indexOf(".") > -1) {
+        const parts = path.split(".");
+        let result = o;
+        parts.forEach((part) => {
+            result = result[part]
+        });
+        return result;
+    }
+    return o[path];
+}
+
+/**
+ * 树遍历
+ * @param childrens
+ * @param index
+ * @param level
+ */
+function recursionTree(childrens, index, level, opts) {
+    if (typeof opts.nodeCallback === 'function') {
+        opts.nodeCallback(childrens[index], childrens, index, level);
+    }
+
+    if (typeof opts.matches === 'function') {
+        if (opts.matches(childrens[index], childrens, index, level)) {
+            return {
+                node: childrens[index],
+                index,
+                level
+            };
+        }
+    }
+
+    level++;
+    const childs = childrens[index][opts.childrenField];
+    for (let i = 0; i < childs.length; i++) {
+        const result = recursionTree(childs, i, level, opts);
+        if (result) {
+            return result;
+        }
+    }
+}
+
+/**
+ * 树迭代
+ * @param fileTree
+ */
+export function iterateTree(fileTree = [], opts = {}) {
+    opts = Object.assign({
+        childrenField: 'childrens',
+        nodeCallback: () => {
+            return {};
+        }
+    }, opts);
+
+    for (let i = 0; i < fileTree.length; i++) {
+        recursionTree(fileTree, i, 0, opts);
+    }
+}
+
+/**
+ * 查找树节点
+ * @param fileTree
+ * @param opts
+ * @returns {{node, level, index}}
+ */
+export function findTreeNode(fileTree = [], opts = {}) {
+    opts = Object.assign({
+        childrenField: 'childrens',
+        matches: () => {
+            return false;
+        }
+    }, opts);
+
+    for (let i = 0; i < fileTree.length; i++) {
+        return recursionTree(fileTree, i, 0, opts);
+    }
+}
+
+
+
 module.exports = {
     getFileExtension,
     getFileName,
@@ -90,5 +251,10 @@ module.exports = {
     dataURL2File,
     dataURL2Blob,
     choiceFile,
-    createObjectURL
+    createObjectURL,
+    arrayBuffer2base64,
+    arrayBuffer2DataURL,
+    list2tree,
+    iterateTree,
+    findTreeNode
 };
