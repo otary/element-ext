@@ -3,18 +3,27 @@
  * @author chenzw
  * @param url
  */
-function loadCss(url) {
-    let tag = document.createElement('link');
-    for (let i = 0; i < document.links.length; i++) {
-        if (document.links[0].href === url) {
-            return;
+function loadCss(url, attrs = {}) {
+    return new Promise((resolve, reject) => {
+        let tag = document.createElement('link');
+        for (let i = 0; i < document.links.length; i++) {
+            if (document.links[0].href === url) {
+                return;
+            }
         }
-    }
-    tag.setAttribute("type", "text/css");
-    tag.setAttribute("ref", "style/sheet");
-    tag.setAttribute("href", url);
+        tag.setAttribute("type", "text/css");
+        tag.setAttribute("ref", "style/sheet");
+        tag.setAttribute("href", url);
+        if (attrs) {
+            Object.keys(attrs).forEach((key) => {
+                tag.setAttribute(key, attrs[key]);
+            });
+        }
+        tag.onload = () => resolve();
+        tag.onerror = (e) => reject(e);
+        document.body.appendChild(tag);
+    });
 
-    document.body.appendChild(tag);
 }
 
 /**
@@ -22,17 +31,27 @@ function loadCss(url) {
  * @author chenzw
  * @param url
  */
-function loadScript(url) {
-    let tag = document.createElement('script');
-    for (let i = 0; i < document.scripts.length; i++) {
-        if (document.scripts[0].src === url) {
-            return;
+function loadScript(url, attrs = {}) {
+    return new Promise((resolve, reject) => {
+            let tag = document.createElement('script');
+            for (let i = 0; i < document.scripts.length; i++) {
+                if (document.scripts[0].src === url) {
+                    return;
+                }
+            }
+            tag.setAttribute("src", url);
+            if (attrs) {
+                Object.keys(attrs).forEach((key) => {
+                    tag.setAttribute(key, attrs[key]);
+                });
+            }
+            tag.onload = () => resolve();
+            tag.onerror = (e) => reject(e);
+            document.body.appendChild(tag);
         }
-    }
-    tag.setAttribute("src", url);
-
-    document.body.appendChild(tag);
+    );
 }
+
 
 /**
  * 延迟阻塞执行
@@ -266,7 +285,7 @@ function getViewport() {
  * @param isEnd
  */
 function smoothScroll(scrollToEnd) {
-    const scrollDirection = (scrollToEnd == true ? "end": "start");
+    const scrollDirection = (scrollToEnd == true ? "end" : "start");
     document.documentElement.scrollIntoView({
         behavior: "smooth", // 平滑
         block: scrollDirection,       // end向下滑动  start向上滑动
