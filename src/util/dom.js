@@ -304,6 +304,49 @@ function scrollToEl(el) {
     });
 }
 
+/**
+ * 进入全屏
+ */
+function fullscreen(el = document.body) {
+    if (el.requestFullscreen) {
+        el.requestFullscreen();
+        return true;
+    } else if (el.mozRequestFullScreen) {
+        el.mozRequestFullScreen();
+        return true;
+    } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+        return true;
+    } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+        return true;
+    }
+    return false;
+}
+
+/**
+ * 退出全屏
+ */
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+}
+
+/**
+ * 判断是否全屏
+ */
+function isFullscreen() {
+    // fullScreen 被弃用（旧版写法）
+    // const isFullScreen = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen || document.msFullscreenElement
+    return document.fullscreenElement;
+}
+
+
 function openWindow(url, windowName, width, height) {
     const x = parseInt(screen.width / 2.0) - width / 2.0;
     const y = parseInt(screen.height / 2.0) - height / 2.0;
