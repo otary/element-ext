@@ -293,6 +293,17 @@ function smoothScroll(scrollToEnd) {
     });
 }
 
+/**
+ * 滚动到指定元素
+ * @param el
+ */
+function scrollToEl(el) {
+    window.scrollTo({
+        top: el.getBoundingClientRect().top + window.scrollY,
+        behavior: "smooth"
+    });
+}
+
 function openWindow(url, windowName, width, height) {
     const x = parseInt(screen.width / 2.0) - width / 2.0;
     const y = parseInt(screen.height / 2.0) - height / 2.0;
@@ -346,5 +357,6 @@ module.exports = {
     escapeHTML,
     getViewport,
     smoothScroll,
-    openWindow
+    openWindow,
+    scrollToEl
 };
