@@ -33,6 +33,23 @@ function leftPad(val, size, padStr) {
     if (!size || !padStr) {
         return val;
     }
+    let result = "";
+    for (let i = 0; i < size - val.length; i++) {
+        result += padStr;
+    }
+    return result + val;
+}
+
+/**
+ * 右填充
+ * @param val
+ * @param size
+ * @param padStr
+ */
+function rightPad(val, size, padStr) {
+    if (!size || !padStr) {
+        return val;
+    }
     let result = val;
     for (let i = 0; i < size - val.length; i++) {
         result += padStr;
@@ -85,6 +102,7 @@ function ellipsis(str, length) {
 module.exports = {
     toCamel,
     leftPad,
+    rightPad,
     render,
     ellipsis
 };
