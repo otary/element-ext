@@ -34,7 +34,7 @@ function leftPad(val, size, padStr) {
         return val;
     }
     let result = "";
-    for (let i = 0; i < size - val.length; i++) {
+    for (let i = 0; i < size - val.toString().length; i++) {
         result += padStr;
     }
     return result + val;
@@ -51,7 +51,7 @@ function rightPad(val, size, padStr) {
         return val;
     }
     let result = val;
-    for (let i = 0; i < size - val.length; i++) {
+    for (let i = 0; i < size - val.toString().length; i++) {
         result += padStr;
     }
     return result;

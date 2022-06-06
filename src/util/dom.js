@@ -401,5 +401,8 @@ module.exports = {
     getViewport,
     smoothScroll,
     openWindow,
-    scrollToEl
+    scrollToEl,
+    fullscreen,
+    exitFullscreen,
+    isFullscreen
 };
