@@ -10,5 +10,6 @@ module.exports = {
     regex: require('./regex'),
     file: require('./file'),
     color: require('./color'),
-    date: require('./date')
+    date: require('./date'),
+    func: require('./fun')
 };
