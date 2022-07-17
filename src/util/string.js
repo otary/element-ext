@@ -110,7 +110,55 @@ function guid() {
     function S4() {
         return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
     }
+
     return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+}
+
+/**
+ * HTML编码字符串
+ * @param source
+ * @returns {string}
+ */
+function encodeHTML(source) {
+    return String(source)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+/**
+ *  HTML解码字符串
+ * @param source
+ * @returns {string}
+ */
+function decodeHTML(source) {
+    const str = String(source)
+        .replace(/&quot;/g, '"')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&');
+
+    // 处理转义的中文和实体字符
+    return str.replace(/&#([\d]+);/g, ($0, $1) => String.fromCodePoint(parseInt($1, 10)));
+}
+
+/**
+ * Unicode转文本
+ * @param unicode
+ * @returns {string}
+ */
+function unicode2Text(unicode) {
+    if (!unicode) {
+        return "";
+    }
+    let result = '';
+    const parts = unicode.split(/[\\u|%u]/);
+    for (let i = 0; i < parts.length; i++) {
+        result += String.fromCharCode(parseInt(parts[i], 16).toString(10));
+    }
+    return result;
 }
 
 module.exports = {
@@ -120,5 +168,8 @@ module.exports = {
     render,
     ellipsis,
     uuid,
-    guid
+    guid,
+    encodeHTML,
+    decodeHTML,
+
 };

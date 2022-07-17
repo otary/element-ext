@@ -1,3 +1,5 @@
+import {unicode2Text} from './string'
+
 /**
  * 生成指定范围随机数
  * @param min
@@ -5,23 +7,6 @@
  */
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-/**
- * Unicode转文本
- * @param unicode
- * @returns {string}
- */
-function unicode2Text(unicode) {
-    if (!unicode) {
-        return "";
-    }
-    let result = '';
-    const parts = unicode.split(/[\\u|%u]/);
-    for (let i = 0; i < parts.length; i++) {
-        result += String.fromCharCode(parseInt(parts[i], 16).toString(10));
-    }
-    return result;
 }
 
 /**
