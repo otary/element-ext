@@ -171,5 +171,5 @@ module.exports = {
     guid,
     encodeHTML,
     decodeHTML,
-
+    unicode2Text
 };

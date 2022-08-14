@@ -1,8 +1,7 @@
 <template>
     <a href="#">
-        <slot></slot>
+        <slot/>
     </a>
-
 </template>
 
 <script>

@@ -231,7 +231,8 @@ function elVisibleInViewport(el, partiallyVisible = false) {
  * @returns {*[]}
  */
 function getImages(el, includeDuplicates = false) {
-    const images = [...el.getElementsByTagName('img')].map(img => img.getAttribute('src'));
+    const images = [...el.getElementsByTagName('img')]
+        .map(img => img.getAttribute('src'));
     return includeDuplicates ? images : [...new Set(images)];
 }
 
@@ -382,6 +383,37 @@ function openWindow(url, windowName, width, height) {
     }
 }
 
+
+/**
+ * 获取样式属性值
+ * @param el
+ * @param property
+ * @returns {string}
+ */
+export function getStylePropertyValue(el, property) {
+    if (!window.getComputedStyle) {
+        // IE
+        window.getComputedStyle = (el) => {
+            this.getPropertyValue = (key) => {
+                const regex = /(-([a-z]){1})/g;
+                if (key === 'float') {
+                    key = 'styleFloat';
+                }
+                if (regex.test(key)) {
+                    key = key.replace(regex, () =>
+                        arguments[2].toUpperCase());
+                }
+                return el.currentStyle && el.currentStyle[key] ? el.currentStyle[key] : null;
+            }
+            return this;
+        }
+    }
+    const computedStyle = window.getComputedStyle(el, null);
+    return computedStyle.getPropertyValue(property) ?
+        computedStyle.getPropertyValue(property) : computedStyle[property];
+}
+
+
 module.exports = {
     loadCss,
     loadScript,
@@ -404,5 +436,6 @@ module.exports = {
     scrollToEl,
     fullscreen,
     exitFullscreen,
-    isFullscreen
+    isFullscreen,
+    getStylePropertyValue
 };

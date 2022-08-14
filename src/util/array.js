@@ -46,9 +46,23 @@ function intersection(arr1, arr2) {
     return arr1.filter(v => arr2.includes(v));
 }
 
+function merge(listA, listB, matchesFn) {
+    const list = listA.concat(listB);
+    return list.reduce((prev, current) => {
+        const found = prev.find(item => matchesFn(item, current));
+        if (found) {
+            Object.assign(found, current);
+        } else {
+            prev.push(current);
+        }
+        return prev;
+    }, []);
+}
+
 module.exports = {
     isArray,
     flatUniqueSort,
     group,
-    intersection
+    intersection,
+    merge
 };
