@@ -98,6 +98,24 @@ function parseUrl(url) {
 }
 
 /**
+ * 替换URL参数值
+ * @param replaceMap
+ * @param url
+ * @returns {string}
+ */
+export function replaceUriParams(replaceMap, url = window.location.href) {
+    Object.entries(replaceMap).forEach((map) => {
+        const name = map[0];
+        const value = map[1];
+        url = url.replace(
+            new RegExp(name + "=[^&]", "gi"),
+            name + "=" + value
+        );
+    });
+    return url;
+}
+
+/**
  * @author chenzw
  */
 module.exports = {
@@ -105,5 +123,6 @@ module.exports = {
     getUriParams,
     existsParam,
     createQueryString,
-    parseUrl
+    parseUrl,
+    replaceUriParams
 };
