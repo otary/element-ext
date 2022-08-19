@@ -107,12 +107,33 @@ export function replaceUriParams(replaceMap, url = window.location.href) {
     Object.entries(replaceMap).forEach((map) => {
         const name = map[0];
         const value = map[1];
+        const paramReg = new RegExp(
+            name + "=[^&]",
+            "gi"
+        );
+        if (!paramReg.test(url)) {
+            url = addUriParams({
+                [name]: value
+            }, url);
+        }
         url = url.replace(
-            new RegExp(name + "=[^&]", "gi"),
+            paramReg,
             name + "=" + value
         );
     });
     return url;
+}
+
+export function addUriParams(params, url = window.location.href) {
+    const urlParams = createQueryString(params);
+    const idx = url.indexOf("?");
+    if (idx == -1) {
+        return url + "?" + urlParams;
+    }
+    if (url.endsWith("?") || url.endsWith("&")) {
+        return url + urlParams;
+    }
+    return url + "&" + urlParams;
 }
 
 /**
@@ -124,5 +145,6 @@ module.exports = {
     existsParam,
     createQueryString,
     parseUrl,
-    replaceUriParams
+    replaceUriParams,
+    addUriParams
 };

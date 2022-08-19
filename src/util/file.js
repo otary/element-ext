@@ -30,6 +30,20 @@ function file2DataURL(file) {
 }
 
 /**
+ * file转ArrayBuffer
+ * @param file
+ * @returns {Promise<any>}
+ */
+function file2ArrayBuffer(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsArrayBuffer(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
+/**
  * DataURL 转 File对象
  * @param dataURL
  * @param fileName
@@ -248,6 +262,7 @@ module.exports = {
     getFileExtension,
     getFileName,
     file2DataURL,
+    file2ArrayBuffer,
     dataURL2File,
     dataURL2Blob,
     choiceFile,
