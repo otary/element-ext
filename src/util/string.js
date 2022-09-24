@@ -1,3 +1,4 @@
+import camelCase from 'lodash/camelCase'
 /**
  * 驼峰/Pascal转下划线格式
  *
@@ -7,7 +8,7 @@
  * @param firstLetterCapitalized
  * @returns {*}
  */
-function toCamel(name, separator = '_', firstLetterCapitalized = false) {
+function toUnderscore(name, separator = '_', firstLetterCapitalized = false) {
     if (!name) {
         return name;
     }
@@ -18,6 +19,14 @@ function toCamel(name, separator = '_', firstLetterCapitalized = false) {
         firstLetter = firstLetter.toLowerCase();
     }
     return firstLetter + name.substring(1).replace(/([A-Z])/g, `${separator}$1`).toLowerCase();
+}
+
+
+/**
+ * 下划线转驼峰命名
+ */
+function toCamelCase(name) {
+    return camelCase(name);
 }
 
 /**
@@ -162,7 +171,8 @@ function unicode2Text(unicode) {
 }
 
 module.exports = {
-    toCamel,
+    toUnderscore,
+    toCamelCase,
     leftPad,
     rightPad,
     render,

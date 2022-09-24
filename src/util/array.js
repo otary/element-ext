@@ -59,10 +59,20 @@ function merge(listA, listB, matchesFn) {
     }, []);
 }
 
+/**
+ * 数组乱序
+ * @param arr
+ * @returns {*}
+ */
+function shuffle(arr) {
+    return arr.sort(() => Math.random() - 0.5);
+}
+
 module.exports = {
     isArray,
     flatUniqueSort,
     group,
     intersection,
-    merge
+    merge,
+    shuffle
 };
