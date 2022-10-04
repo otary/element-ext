@@ -16,6 +16,23 @@ function getFileName(fileName) {
 }
 
 /**
+ * 人类的文件大小
+ * @param size
+ * @param fractionDigits
+ */
+function dataSizeHR(size, fractionDigits = 2) {
+    if (!size) {
+        return '0 B';
+    }
+    const units = new Array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+    const fsize = parseFloat(size);
+    const index = Math.floor(Math.log(fsize) / Math.log(1024));
+    const _size = (fsize / Math.pow(1024, index))
+        .toFixed(fractionDigits);
+    return _size + ' ' + units[index];
+}
+
+/**
  * 文件转DataURL
  * @param file
  * @returns {Promise<any>}
@@ -149,7 +166,7 @@ export function list2tree(fileList = [], opts = {}) {
         originalTree: [],
         pathField: 'path',
         labelField: 'label',
-        childrenField: 'childrens',
+        childField: 'childrens',
         extFields: () => {
             return {};
         }
@@ -226,7 +243,7 @@ function recursionTree(childrens, index, level, opts) {
  */
 export function iterateTree(fileTree = [], opts = {}) {
     opts = Object.assign({
-        childrenField: 'childrens',
+        childField: 'childrens',
         nodeCallback: () => {
             return {};
         }
@@ -245,7 +262,7 @@ export function iterateTree(fileTree = [], opts = {}) {
  */
 export function findTreeNode(fileTree = [], opts = {}) {
     opts = Object.assign({
-        childrenField: 'childrens',
+        childField: 'childrens',
         matches: () => {
             return false;
         }
@@ -271,5 +288,6 @@ module.exports = {
     arrayBuffer2DataURL,
     list2tree,
     iterateTree,
-    findTreeNode
+    findTreeNode,
+    dataSizeHR
 };

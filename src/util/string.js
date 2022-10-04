@@ -30,6 +30,18 @@ function toCamelCase(name) {
 }
 
 /**
+ * 首写字母大写
+ * @param name
+ */
+function firstLetterCapitalize(name) {
+    if (!name) {
+        return name;
+    }
+    let firstLetter = name.slice(0, 1).toUpperCase();
+    return firstLetter + name.substring(1);
+}
+
+/**
  * 左填充
  *
  * @author chenzw
@@ -173,6 +185,7 @@ function unicode2Text(unicode) {
 module.exports = {
     toUnderscore,
     toCamelCase,
+    firstLetterCapitalize,
     leftPad,
     rightPad,
     render,

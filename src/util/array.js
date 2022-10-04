@@ -15,7 +15,27 @@ function isArray(value) {
  * @returns {any[]}
  */
 function flatUniqueSort(array) {
-    return Array.from(new Set(array.flat(Infinity))).sort((a, b) => a - b);
+    return Array.from(
+        new Set(array.flat(Infinity))
+    ).sort((a, b) => a - b);
+}
+
+/**
+ * 数组对象去重
+ * @param array
+ * @param uniqueValueFn
+ * @returns {*}
+ */
+function unique(array, uniqueValueFn = ((item) => item)) {
+    const cache = new Map();
+    return array.filter((item) => {
+        const value = uniqueValueFn(item);
+        if (!cache.has(value)) {
+            cache.set(value, 1);
+            return true;
+        }
+        return false;
+    });
 }
 
 /**
@@ -46,6 +66,40 @@ function intersection(arr1, arr2) {
     return arr1.filter(v => arr2.includes(v));
 }
 
+/**
+ * 数组差集
+ * @param arr1
+ * @param arr2
+ * @param matchesFn
+ * @param isSymmetrical 是否对称差集
+ * 1. 对称差集：（arr1 - arr2） + （arr2 - arr1）
+ * 2. 非对称差集：（arr1 - arr2）
+ * @returns {*}
+ */
+function subtraction(arr1, arr2, matchesFn, isSymmetrical = false) {
+    if (isSymmetrical) {
+        const rs1 = arr1.filter(a1 => {
+            return !arr2.find((a2) => matchesFn(a1, a2));
+        });
+        const rs2 = arr2.filter((a2) => {
+            return !arr1.find((a1) => matchesFn(a1, a2));
+        });
+        return rs1.concat(rs2);
+    } else {
+        return arr1.filter(a1 => {
+            return !arr2.find((a2) => matchesFn(a1, a2));
+        });
+    }
+}
+
+
+/**
+ * 数组合并
+ * @param listA
+ * @param listB
+ * @param matchesFn
+ * @returns {*}
+ */
 function merge(listA, listB, matchesFn) {
     const list = listA.concat(listB);
     return list.reduce((prev, current) => {
@@ -71,8 +125,10 @@ function shuffle(arr) {
 module.exports = {
     isArray,
     flatUniqueSort,
+    unique,
     group,
     intersection,
+    subtraction,
     merge,
     shuffle
 };

@@ -298,13 +298,12 @@ function smoothScroll(scrollToEnd) {
  * 滚动到指定元素
  * @param el
  */
-function scrollToEl(el) {
+function scrollToEl(el, offsetTop = 0) {
     window.scrollTo({
-        top: el.getBoundingClientRect().top + window.scrollY,
+        top: el.getBoundingClientRect().top + window.scrollY - offsetTop,
         behavior: "smooth"
     });
 }
-
 /**
  * 进入全屏
  */
