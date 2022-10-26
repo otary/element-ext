@@ -48,7 +48,31 @@ function humanMillisecond(ms) {
 }
 
 
+/**
+ * 秒数 => 人类可读化
+ * @param seconds
+ */
+export function humanizeSeconds(seconds) {
+    let sec = parseInt(seconds),
+        min = 0,
+        hour = 0;
+    if (sec >= 60) {
+        min = parseInt(sec / 60);
+        sec = parseInt((sec % 60));
+        if (min >= 60) {
+            hour = parseInt(min / 60);
+            min = parseInt(min % 60);
+        }
+    }
+    return hour.toString().padStart(2, '0') + ':' +
+        min.toString().padStart(2, '0') + ':' +
+        sec.toString().padStart(2, '0');
+
+}
+
+
 module.exports = {
     humanMillisecond,
-    format
+    format,
+    humanizeSeconds
 }

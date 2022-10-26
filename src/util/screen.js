@@ -23,6 +23,45 @@ function getScreenInfo() {
     }
 }
 
+/**
+ * 获取屏幕刷新率FPS
+ * @param options
+ * @returns {Promise<any>}
+ */
+function getScreenFps(options = {}) {
+    // 先做一下兼容性处理
+    const nextFrame = ([
+        window.requestAnimationFrame,
+        window.webkitRequestAnimationFrame,
+        window.mozRequestAnimationFrame
+    ]).find(fn => fn)
+    if (!nextFrame) {
+        console.error('requestAnimationFrame is not supported!');
+        return;
+    }
+
+    const {
+        testFrameCount = 50
+    } = options;
+
+    const beginDate = Date.now();
+    let count = 0;
+    return new Promise(resolve => {
+        (function log() {
+            nextFrame(() => {
+                if (++count >= testFrameCount) {
+                    const diffDate = Date.now() - beginDate;
+                    const fps = (count / diffDate) * 1000;
+                    return resolve(fps);
+                }
+                log();
+            })
+        })()
+    })
+}
+
+
 module.exports = {
-    getScreenInfo
+    getScreenInfo,
+    getScreenFps
 }
