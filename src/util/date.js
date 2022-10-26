@@ -47,6 +47,44 @@ function humanMillisecond(ms) {
         .join(', ');
 }
 
+/**
+ * 获取某个月第N个星期X的日期
+ * @param year
+ * @param month 月份
+ * @param nth 第nth个
+ * @param dow 星期dow
+ * @returns {Date}
+ */
+export function nthWeekdayOfMonth(year, month, nth, dow) {
+    const d = new Date(year, month - 1, 7 * (nth - 1) + 1);
+    const w = d.getDay();
+    d.setDate(d.getDate() + (7 + dow - w) % 7);
+    return d;
+}
+
+/**
+ * 获取时区
+ * @returns {*} eg. Asia/Shanghai
+ */
+export function getTimezone() {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
+/**
+ * UTC 相对于当前时区的相差分钟数（除以-60可以得到小时偏移量）
+ * @returns {number} eg. -480
+ */
+export function getTimezoneOffset() {
+    return new Date().getTimezoneOffset();
+}
+
+/**
+ * 获取人类可读的时区偏移
+ * @returns {string} eg. UTC+8
+ */
+export function getHumanizeTimezoneOffset() {
+    return 'UTC+' + (0 - new Date().getTimezoneOffset() / 60);
+}
 
 /**
  * 秒数 => 人类可读化
@@ -74,5 +112,9 @@ export function humanizeSeconds(seconds) {
 module.exports = {
     humanMillisecond,
     format,
+    nthWeekdayOfMonth,
+    getTimezone,
+    getTimezoneOffset,
+    getHumanizeTimezoneOffset,
     humanizeSeconds
 }
