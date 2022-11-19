@@ -1,3 +1,15 @@
+const _isEqual = require('loadsh/isEqual');
+
+/**
+ * 判断数组是否一样
+ * @param a1
+ * @param a2
+ * @returns {boolean}
+ */
+function isSameArray(a1, a2) {
+    return _isEqual(a1, a2);
+}
+
 /**
  * 判断是否数组对象
  * @author chenzw
@@ -123,6 +135,7 @@ function shuffle(arr) {
 }
 
 module.exports = {
+    isSameArray,
     isArray,
     flatUniqueSort,
     unique,

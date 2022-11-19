@@ -1,7 +1,18 @@
 const _clone = require('lodash/clone');
 const _cloneDeep = require('lodash/cloneDeep');
 const _conformsTo = require('lodash/conformsTo');
-const _merge = require('lodash/merge')
+const _merge = require('lodash/merge');
+const _isEqual = require('loadsh/isEqual');
+
+/**
+ * 判断对象是否一样
+ * @param o1
+ * @param o2
+ * @returns {*}
+ */
+function isSameObject(o1, o2) {
+    return _isEqual(o1, o2);
+}
 
 /**
  * 浅复制
@@ -146,6 +157,7 @@ function getNodePathValue(o, nodePath) {
 }
 
 module.exports = {
+    isSameObject,
     clone,
     cloneDeep,
     conformsTo,
